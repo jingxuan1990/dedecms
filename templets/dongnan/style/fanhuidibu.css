@@ -1,0 +1,34 @@
+﻿#roll_top, #fall, #ct
+{
+    position: relative;
+    cursor: pointer;
+    height: 41px;
+    width: 36px;
+    z-index: 10;
+}
+#roll_top
+{
+    background: url(../images/common/top.gif) no-repeat;
+}
+#fall
+{
+    background: url(../images/common/top.gif) no-repeat 0 -80px;
+}
+#ct
+{
+    background: url(../images/common/top.gif) no-repeat 0 -40px;
+}
+#roll
+{
+    display: block;
+    width: 15px;
+    margin-right: -500px;
+    position: fixed;
+    right: 50%;
+    top: 66%;
+    _margin-right: -505px;
+    _position: absolute;
+    _margin-top: 300px;
+    _top: expression(eval(document.documentElement.scrollTop));
+}
+

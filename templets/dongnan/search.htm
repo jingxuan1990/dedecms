@@ -1,0 +1,14 @@
+<div class="h_sea">
+  <div class="content">
+    <div class="s_inp fr">
+      <input type="text" class="inp01" value="请输入关键词搜索" id="seachkeywords"/>
+      <input type="button" class="s_ss" onclick="xuanze()"/>
+    </div>
+    <p class="key fl">
+      热门关键词：
+      {dede:tag row='5' getall='1' sort='month'}
+      <a href='[field:link/]'>[field:tag /]</a> |
+      <a href="[field:link/]" title="[field:tag /]">[field:tag /]</a>|
+      {/dede:tag}
+  </div>
+</div>

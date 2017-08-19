@@ -18,21 +18,11 @@
 {dede:include filename="head.htm"/}
 <!--头部结束-->
 
-<!--广告-->
-<div id='flashs' style="height: 493px; overflow: hidden;" class="banner">
-  <a class="bgitem" id="flashbg0" href="/product/"
-     title="东南电工——专业电力供配电专家，为您提供优质电力工程服务" style="background: url('{dede:global.cfg_templets_skin/}/images/20150205102225_34382.jpg') no-repeat scroll center top;
-                height: 493px; width: 100%;"></a>
 
-  <a class="bgitem" id="flashbg1" href="/project/"
-     title="东南电工为您提供最经济、节能的电力工程服务" style="background: url('{dede:global.cfg_templets_skin/}/images/20150402182145_30895.jpg') no-repeat scroll center top;
-                height: 493px; width: 100%;"></a>
+<!--广告开始-->
+{dede:include filename="myad.htm"/}
+<!--广告结束-->
 
-  <a class="bgitem" id="flashbg2" href="/project/"
-     title="15年世界著名跨国公司服务经验，把工程交给东南，您更放心" style="background: url('{dede:global.cfg_templets_skin/}/images/20150313165638_26026.jpg') no-repeat scroll center top;
-                height: 493px; width: 100%;"></a>
-
-</div>
 
 <!-- 关键字和搜索开始 -->
 {dede:include filename=search.htm"/}
@@ -52,26 +42,20 @@
   <div class="ywc content">
     <ul>
       <li>
-        <img src="{dede:global.cfg_templets_skin/}/images/yw_pic01.png"
-             alt="广州第一家民营电力"/><b>广州<span>第一家民营电力</span><br/>
-        工程企业</b></li>
+        {dede:myad name='pic001'/}
+      </li>
       <li class="ysl1">
-        <img src="{dede:global.cfg_templets_skin/}/images/yw_pic02.png"
-             alt="15年世界著名跨国公司"/><b><span>15年</span>世界著名<span>跨国公司<br/>
-                        服务经验</span></b></li>
+        {dede:myad name='pic002'/}
+      </li>
       <li>
-        <a href="#" title="已为1900多家企业" target="_blank"><img
-            src="{dede:global.cfg_templets_skin/}/images/yw_pic03.png"
-            alt="已为1900多家企业"/></a><b>已为<span>1900多家企业</span><br/>
-        提供服务</b></li>
+        {dede:myad name='pic003'/}
+      </li>
     </ul>
   </div>
 </div>
 <div class="content">
   <div class="cpbox">
     <!--东南业务分类-->
-
-
     <div class="dh fl">
       <h2>
         <a href="http://www.dnee.com.cn/product/" title="东南业务分类">
@@ -115,6 +99,7 @@
 
       </div>
     </div>
+
     <script type="text/javascript">
 
       var sid = "";

@@ -7,7 +7,9 @@
   <link href="{dede:global.cfg_templets_skin/}/style/resetcommon.css" rel="stylesheet"
         type="text/css"/>
   <link href="{dede:global.cfg_templets_skin/}/style/Style.css" rel="stylesheet" type="text/css"/>
-  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/JS/NSW_JCIA.js"></script>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/NSW_JCIA.js"></script>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/custom.js"></script>
+  <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 </head>
 <body>
 <!--头部开始-->
@@ -60,14 +62,14 @@
           </a></dt>
         <dd>
           <p class="p1">
-            <a target="_blank" href="[field:arcurl/]"
-               title="[field:title/]">
-              [field:title/]</a></p>
+            <a target="_blank" href="[field:arcurl/]" title="[field:title/]">[field:title/]</a>
+          </p>
           <p class="p2">
-            <a title="了解详情" target="_blank" href="[field:arcurl/]">
-              了解详情</a><a class="i_ask" title="立即咨询" target="_blank"
-                         href="http://wpa.qq.com/msgrd?v=3&site={dede:global.cfg_companyname/}&menu=yes&uin=1037515501"
-                         target="_blank">立即咨询</a></p>
+            <a title="了解详情" target="_blank" href="[field:arcurl/]">了解详情</a>
+            <a class="i_ask" title="立即咨询" target="_blank"
+               href="http://wpa.qq.com/msgrd?v=3&site={dede:global.cfg_companyname/}&menu=yes&uin=1037515501"
+               target="_blank">立即咨询</a>
+          </p>
         </dd>
       </dl>
       {/dede:arclist}
@@ -103,32 +105,42 @@
     <div class="leib2">
 
       <div class="tit" style=" margin-top:10px;">
-        <span>东南业务中心</span>
+        <span>
+          {dede:type typeid='25'}
+            [field:typename/]
+          {/dede:type}
+        </span>
       </div>
 
-      {dede:channelartlist typeid='25'}
       <div class="nr">
-        <h4 sid='0001,0004'>
-          <a href="{dede:field name='typeurl'/}" title="按工程种类分类">{dede:field name='typename'/}</a>
+        {dede:channelartlist typeid='25'}
+        <h4 sid="0001,000{dede:field name='id'/}">
+          <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">{dede:field
+            name='typename'/}</a>
         </h4>
         <ul>
           {dede:arclist titlelen='10' row='5'}
-          <li sid='0001,0004,0005'><a href="[field:arcurl /]" title="电气工程">[field:title /]</a></li>
+          <li sid="0001,000[field:typeid runphp='yes' ]
+            global $dsql;
+            @typeid=@me
+            $dsql->SetQuery(" SELECT * FROM #@__arctype WHERE id=@typeid");
+              $dsql->Execute();
+            $row = $dsql->GetArray();
+            @me=$row['reid'];
+            [/field:typeid],000[field:id /]">
+            <a href="[field:arcurl /]" title="[field:title /]">[field:title/]</a>
+          </li>
           {/dede:arclist}
-          <!--<li sid='0001,0004,0005'><a href="/Products/dqgc_1.html" title="电气工程">电气工程</a></li>-->
-          <!--<li sid='0001,0004,0006'><a href="/Products/dndgwdgc.html" title="外电工程">外电工程</a></li>-->
-          <!--<li sid='0001,0004,0007'><a href="/Products/gdypdgc.html" title="高低压供配电工程">高低压供配电工程</a>-->
-          <!--</li>-->
-          <!--<li sid='0001,0004,0008'><a href="/Products/ydjngc.html" title="用电节能工程">用电节能工程</a></li>-->
-          <!--<li sid='0001,0004,0025'><a href="/Products/ydgzgc.html" title="用电改造工程">用电改造工程</a></li>-->
-          <!--<li sid='0001,0004,0009'><a href="/Products/sbdgcheng.html" title="送变电工程">送变电工程</a></li>-->
         </ul>
+        {/dede:channelartlist}
       </div>
-      {/dede:channelartlist}
     </div>
     <script type="text/javascript">
-      var SID = "";
-      productSelectCurrentPosition("");
+      var SID = '';
+      SID = $.cookie('SID');
+      console.log("SID=" + SID)
+      addClickEventForRTab();
+      productSelectCurrentPosition();
     </script>
 
     <!-- 联系我们开始-->
@@ -148,7 +160,7 @@
 
 
 <!-- 返回顶部 -->
-<script src="/JS/rollup.min.js" type="text/javascript"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/rollup.min.js" type="text/javascript"></script>
 
 <!-- Baidu Button BEGIN 百度分享开始 -->
 <script type="text/javascript" id="bdshare_js"

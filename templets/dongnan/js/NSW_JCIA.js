@@ -4942,6 +4942,7 @@ function getObjectOffset(d) {
 function productSelectCurrentPosition(a) {
   $("div.nr h4[sid='" + SID + "'],div.nr li[sid='" + SID + "']").addClass("cur")
 }
+
 function ShowHelp(b) {
   var a = $j("div_nsw_show_help");
   if (a.length == 0) {

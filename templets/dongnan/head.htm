@@ -22,9 +22,14 @@
     </div>
     <div class="menu">
       <ul>
-        <li class="cur"><a href="{dede:global.cfg_cmsurl/}/" title="首页"><span>首页</span></a></li>
-        {dede:channel type='top' row='10' currentstyle="<li><a href='~typeurl~' title='~typename~'><span>~typename~</span></a></li>"}
-        <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a></li>
+        <li class="cur">
+          <a href="{dede:global.cfg_cmsurl/}/" title="{dede:global.cfg_indexname/}">
+            <span>{dede:global.cfg_indexname/}</span>
+          </a>
+        </li>
+        {dede:channel type='top' row='10' currentstyle=" <li><a href='~typeurl~' title='~typename~'><span>~typename~</span></a></li>"}
+        <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a>
+        </li>
         {/dede:channel}
       </ul>
     </div>

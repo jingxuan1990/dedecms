@@ -3120,6 +3120,7 @@
     }
   })
 })();
+
 /*Index.js*/
 var SKIN_PATH = "/Skins/default/";
 function initCommonHeader() {

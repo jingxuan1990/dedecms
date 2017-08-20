@@ -9,7 +9,6 @@
   <link href="{dede:global.cfg_templets_skin/}/style/Style.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/NSW_JCIA.js"></script>
   <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/custom.js"></script>
-  <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 </head>
 <body>
 <!--头部开始-->
@@ -137,12 +136,13 @@
     </div>
     <script type="text/javascript">
       var SID = '';
-      SID = $.cookie('SID');
+      var typeId = {dede:type}
+          [field:id/]
+      {/dede:type}
+      SID = '0001,000' + typeId;
       console.log("SID=" + SID)
-      addClickEventForRTab();
       productSelectCurrentPosition();
     </script>
-
 
     <!-- 新闻中心开始-->
     {dede:include filename="news_center.htm"/}

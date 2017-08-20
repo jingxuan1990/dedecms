@@ -6102,7 +6102,7 @@ function submitOrder(a) {
     dede_fields: 'txtcontact,text;txtcompname,text;txttel,text;txtmobile,text;txtemail,text;txtaddr,text;txtcontent,multitext'
   }, function (q) {
     var codeEle = document.getElementById("imgvalidate");
-    codeEle.src = "../include/vdimgck.php?" + new Date().getTime();
+    codeEle.src = CMS_PATH + "/include/vdimgck.php?" + new Date().getTime();
     if (q === "succ") {
       $a("预约成功！", 1);
       emptyText("tbForm1");

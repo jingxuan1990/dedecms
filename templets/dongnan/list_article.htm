@@ -42,8 +42,6 @@
     <div class="plc">
       <span>
         <span>当前位置：</span>
-        <!--<a href="/" title="首页">首页</a> &raquo;-->
-        <!--<a href='/product/' title="东南电工业务中心">东南电工业务中心</a>-->
        {dede:field.position/}
       </span>
     </div>
@@ -52,7 +50,7 @@
     </div>
 
     <div class="pro_main">
-      {dede:arclist typeid='25' row='20' orderby=pubdate type='image.' imgwidth='223'
+      {dede:arclist row='20' orderby=pubdate type='image.' imgwidth='223'
       imgheight='132'}
       <dl class="pd_index_dl">
         <dt>
@@ -134,13 +132,17 @@
         {/dede:channelartlist}
       </div>
     </div>
+
     <script type="text/javascript">
       var SID = '';
-      var typeId = {dede:type}
-          [field:id/]
-      {/dede:type}
+      var aid = "{dede:field.id/}";
+      var typeId = "{dede:type}[field:id /]{/dede:type}";
+
       SID = '0001,000' + typeId;
-      console.log("SID=" + SID)
+      if (aid !== '' && aid !== typeId) {
+        SID = SID + ",000" + aid;
+      }
+      console.log("SID=" + SID);
       productSelectCurrentPosition();
     </script>
 

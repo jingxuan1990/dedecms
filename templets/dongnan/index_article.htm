@@ -132,13 +132,17 @@
         {/dede:channelartlist}
       </div>
     </div>
+
     <script type="text/javascript">
       var SID = '';
-      var typeId = {dede:type}
-          [field:id/]
-      {/dede:type}
+      var aid = "{dede:field.id/}";
+      var typeId = "{dede:type}[field:id /]{/dede:type}";
+
       SID = '0001,000' + typeId;
-      console.log("SID=" + SID)
+      if(aid !== '') {
+        SID = SID + ",000" + aid;
+      }
+      console.log("SID=" + SID);
       productSelectCurrentPosition();
     </script>
 

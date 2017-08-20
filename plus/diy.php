@@ -41,8 +41,6 @@ if($action == 'post')
         $svali = strtolower(GetCkVdValue());
         if($validate=='' || $validate != $svali){
             ResetVdValue();
-            echo 'svali=' . $svali;
-            echo 'validate='.$validate;
             echo '验证码不正确!';
             exit;
         }

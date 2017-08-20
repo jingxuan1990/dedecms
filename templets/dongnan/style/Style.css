@@ -1,11 +1,11 @@
 ﻿@charset "utf-8";
 
 .t01, .t02, .t03, .t05, .t06, .t07, .t08, .t09, .plc2, .rtit, .rtit1, .pro_lc, .lc1, .lc2, .lc3, .lc4, .lnav h3, .userleftnav h4, .leftsearch, .topsearch, .ljob, .jointel, .club_lin2, .procom h4, .caigou, .comments h4 {
-  background: url(Img/SkinsVIBar.png) no-repeat;
+  background: url(../images/common/SkinsVIBar.png) no-repeat;
 }
 
 .b01, .b02, .b03, .b04, .b05, .b06, .b07, .b08, .b09, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20, .b21, .b22, .b23, .b24, .b25, .b26, .b27, .b28, .b29, .b30, .b31, .b32, .b33, .b34, .b35, .b36, .b37, .b38, .b39, .b40, .b41, .b42, .b43, .b44, .b45, .b46, .b47, .b48, .b49, .b49b, .b59, .b60, .b61, .b62, ul.n_rt_ul {
-  background: url(Img/SkinsVIBtn.png) no-repeat;
+  background: url(../images/common/SkinsVIBtn.png) no-repeat;
   border: 0;
   cursor: pointer;
   overflow: hidden;

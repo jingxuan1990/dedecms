@@ -37,15 +37,26 @@ if($action == 'post')
     }
     elseif($do == 2)
     {
+        $validate = empty($validate) ? '' : strtolower(trim($validate));
+        $svali = strtolower(GetCkVdValue());
+        if($validate=='' || $validate != $svali){
+            ResetVdValue();
+            echo 'svali=' . $svali;
+            echo 'validate='.$validate;
+            echo '验证码不正确!';
+            exit;
+        }
+
+
         $dede_fields = empty($dede_fields) ? '' : trim($dede_fields);
         $dede_fieldshash = empty($dede_fieldshash) ? '' : trim($dede_fieldshash);
         if(!empty($dede_fields))
         {
-            if($dede_fieldshash != md5($dede_fields.$cfg_cookie_encode))
-            {
-                showMsg('数据校验不对，程序返回', '-1');
-                exit();
-            }
+//            if($dede_fieldshash != md5($dede_fields.$cfg_cookie_encode))
+//            {
+//                showMsg('数据校验不对，程序返回', '-1');
+//                exit();
+//            }
         }
         $diyform = $dsql->getOne("select * from #@__diyforms where diyid='$diyid' ");
         if(!is_array($diyform))
@@ -98,7 +109,10 @@ if($action == 'post')
                 $goto = !empty($cfg_cmspath) ? $cfg_cmspath : '/';
                 $bkmsg = '发布成功，请等待管理员处理...';
             }
-            showmsg($bkmsg, $goto);
+            echo "succ";
+//            showmsg($bkmsg, $goto);
+        }else{
+            echo "error";
         }
     }
 }

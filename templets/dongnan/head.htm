@@ -1,19 +1,20 @@
 <div class="h_top">
   <div class="header">
     <div class="h_zc">
-            <span class="fr"><a href="javascript:void(0);" onclick="javascript:addBookmark(this)"
-                                title="收藏本站">收藏本站</a>|<a
-                href="#"
-                title="在线留言" target="_blank">在线留言</a>|<a href="#"
-                                                         title="常见问答" target="_blank">常见问答</a>|<a
-                href="{dede:global.cfg_cmsurl/}/data/sitemap.html"
-                target="_blank" title="网站地图">网站地图</a></span>{dede:global.cfg_welcome/}
+            <span class="fr">
+              <a href="javascript:void(0);" onclick="javascript:addBookmark(this)"
+                 title="收藏本站">收藏本站</a>|
+              <a href="#" title="在线留言" target="_blank">在线留言</a>|
+              <a href="#" title="常见问答" target="_blank">常见问答</a>|
+              <a href="{dede:global.cfg_cmsurl/}/data/sitemap.html" target="_blank" title="网站地图">网站地图</a>
+            </span>
+      {dede:global.cfg_welcome/}
     </div>
     <div class="h_con">
       <div class="h_pho fr">
         全国咨询电话<b>{dede:global.cfg_phone/}</b></div>
       <h1 class="fl">
-        <a href="/" title="{dede:global.cfg_companyname/}">
+        <a href="{dede:global.cfg_indexurl/}" title="{dede:global.cfg_indexname/}">
           <img src="{dede:global.cfg_logo/}"
                alt="{dede:global.cfg_companyname/}"
                title="{dede:global.cfg_companyname/}"/></a></h1>
@@ -27,8 +28,9 @@
             <span>{dede:global.cfg_indexname/}</span>
           </a>
         </li>
-        {dede:channel type='top' row='10' currentstyle=" <li><a href='~typeurl~' title='~typename~'><span>~typename~</span></a></li>"}
-        <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a>
+        {dede:channel type='top' row='10' currentstyle="<li><a href='~typeurl~' title='~typename~'><span>~typename~</span></a></li>"}
+        <li>
+          <a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a>
         </li>
         {/dede:channel}
       </ul>

@@ -1,16 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<head id="Head1">
   {dede:include filename="meta.htm"/}
   <script type="text/javascript">SKIN_PATH = "{dede:global.cfg_templets_skin/}/style/";</script>
   <link href="{dede:global.cfg_templets_skin/}/style/resetcommon.css" rel="stylesheet"
         type="text/css"/>
   <link href="{dede:global.cfg_templets_skin/}/style/Style.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/NSW_JCIA.js"></script>
-  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/custom.js"></script>
 </head>
+
+<script type="text/javascript">
+  var MARK = "project";
+</script>
 <body>
+<!--Header:Start-->
+
 <!--头部开始-->
 {dede:include filename="head.htm"/}
 <!--头部结束-->
@@ -22,102 +27,40 @@
 <script type="text/javascript">
   //    heaernavcs();
   initCommonHeader();
-  var MARK = "product";
+  var MARK = "project";
   if (MARK == "") {
     MARK = "index";
   }
   //    initCommonHeaderKeywords(MARK);
 </script>
 <!--Header:End-->
+
 <!--Content:Start-->
-<div class="topadcs">
-  <a href="/project/" title="东南电工——专业电力供配电专家，为您提供优质电力工程服务">
-    <img
+<div class="content">
+  <div class="topadcs">
+    <a href="/project/" title="东南电工——专业电力供配电专家，为您提供优质电力工程服务"><img
         src="{dede:global.cfg_templets_skin/}/images/20141230111606_85703.jpg"
         title="东南电工——专业电力供配电专家，为您提供优质电力工程服务"
         alt="东南电工——专业电力供配电专家，为您提供优质电力工程服务"/></a>
-</div>
-
-<div class="content">
-  <div class="rightl">
-    <div class="plc">
-      <span>
-        <span>当前位置：</span>
-       {dede:field.position/}
-      </span>
-    </div>
-
-    <div class="righttop">
-    </div>
-
-    <div class="pro_main">
-      {dede:arclist typeid='25' row='20' orderby=pubdate type='image.' imgwidth='223'
-      imgheight='132'}
-      <dl class="pd_index_dl">
-        <dt>
-          <a target="_blank" href="[field:arcurl/]" title="[field:title/]">
-            [field:image/]
-          </a></dt>
-        <dd>
-          <p class="p1">
-            <a target="_blank" href="[field:arcurl/]" title="[field:title/]">[field:title/]</a>
-          </p>
-          <p class="p2">
-            <a title="了解详情" target="_blank" href="[field:arcurl/]">了解详情</a>
-            <a class="i_ask" title="立即咨询" target="_blank"
-               href="http://wpa.qq.com/msgrd?v=3&site={dede:global.cfg_companyname/}&menu=yes&uin=1037515501"
-               target="_blank">立即咨询</a>
-          </p>
-        </dd>
-      </dl>
-      {/dede:arclist}
-    </div>
-
-    <div class="rightbot">
-    </div>
-    <div class="clear">
-    </div>
-
-    <div class="RandomNews">
-      <h4 class="diysr">东南推荐资讯</h4>
-      <div class="news_random">
-        <ul>
-          {dede:arclist typeid='29' row='20' titlelen='30' orderby='rand'}
-          <li>
-            <span class="fr">[field:pubdate function="MyDate('m-d',@me)"/]</span>
-            <a target="_blank" href="[field:arcurl /]" title="[field:title /]">
-              [field:title /]
-            </a>
-          </li>
-          {/dede:arclist}
-          <div class="clear">
-          </div>
-        </ul>
-      </div>
-    </div>
-    <div class="rightbot">
-    </div>
   </div>
 
-  <div class="leftr">
+  <div class="left">
     <div class="leib2">
-
-      <div class="tit" style=" margin-top:10px;">
+      <div class="tit">
         <span>
-          {dede:type typeid='25'}
+          {dede:type typeid='38'}
             [field:typename/]
           {/dede:type}
         </span>
       </div>
-
       <div class="nr">
-        {dede:channelartlist typeid='25'}
+        {dede:channelartlist typeid='38'}
         <h4 sid="0001,000{dede:field name='id'/}">
           <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">{dede:field
             name='typename'/}</a>
         </h4>
         <ul>
-          {dede:arclist titlelen='10' row='5'}
+          {dede:arclist titlelen='20' row='5'}
           <li sid="0001,000[field:typeid runphp='yes' ]
             global $dsql;
             @typeid=@me
@@ -147,25 +90,63 @@
       productSelectCurrentPosition();
     </script>
 
-    <!-- 新闻中心开始-->
-    {dede:include filename="news_center.htm"/}
-    <!-- 新闻中心结束-->
-
     <!-- 联系我们开始-->
     {dede:include filename="contact_us.htm"/}
     <!-- 联系我们结束-->
   </div>
+
+  <div class="right">
+    <div class="pro_curmbs">
+      <span>当前位置：</span>
+      {dede:field.position/}
+    </div>
+
+    <div class="righttop">
+    </div>
+    <div class="pro_main">
+      {dede:arclist channelid='1' typeid='38' addfields='body' row='20' orderby='sortrank' type='image.' imgwidth='250' imgheight='248'}
+      <div class="fls">
+        <dl class="p_list_dl">
+          <dt>
+            <a target="_blank" href="[field:arcurl/]">
+              [field:image/]
+            </a>
+          </dt>
+          <dd>
+            <h3>
+              <a href="[field:arcurl/]"
+                 title="[field:title/]">[field:title/]</a>
+            </h3>
+            <p>
+              [field:body/]
+            </p>
+            <span class="ico_gd">
+              <a href="http://wpa.qq.com/msgrd?v=3&site={dede:global.cfg_companyname/}&menu=yes&uin=1037515501"
+                 target="_blank" title="立即咨询" class="ico_lj">立即咨询</a>
+              <a href="[field:arcurl/]" title="了解更多" target="_blank">了解更多</a>
+            </span>
+          </dd>
+        </dl>
+      </div>
+      {/dede:arclist}
+
+      <div class="clear">
+      </div>
+    </div>
+    <div class="rightbot">
+    </div>
+  </div>
   <div class="clear">
+  </div>
+  <div id="mailArticle">
   </div>
 </div>
 <!--Content:End-->
 <!--Footer:Start-->
 
-
 <!--底部开始-->
 {dede:include filename="footer.htm"/}
 <!--底部结束-->
-
 
 <!-- 返回顶部 -->
 <script src="{dede:global.cfg_templets_skin/}/js/rollup.min.js" type="text/javascript"></script>
@@ -187,11 +168,12 @@
 <![endif]-->
 
 <!--Footer:End-->
-<!-- dnee.com.cn Baidu tongji analytics -->
-<script type="text/javascript">
-  var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-  document.write(unescape("%3Cscript src='" + _bdhmProtocol
-      + "hm.baidu.com/h.js%3Faa1dc367fd5ff21eaaf3d5d5e6a8ef76' type='text/javascript'%3E%3C/script%3E"));
-</script>
 </body>
+<script type="text/javascript">
+  $(function () {
+    if ($(".h_nav ul li").eq(4).attr("class") == "cur") {
+      $(".h_nav ul li").eq(0).removeClass("cur");
+    }
+  });
+</script>
 </html>

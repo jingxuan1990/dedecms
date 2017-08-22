@@ -90,36 +90,94 @@
 
     <div class="righttop">
     </div>
-    <div class="pro_main">
-      {dede:arclist channelid='1' typeid='38' addfields='body' row='20' orderby='sortrank' type='image.' imgwidth='250' imgheight='248'}
-      <div class="fls">
-        <dl class="p_list_dl">
-          <dt>
-            <a target="_blank" href="[field:arcurl/]">
-              [field:image/]
-            </a>
-          </dt>
-          <dd>
-            <h3>
-              <a href="[field:arcurl/]"
-                 title="[field:title/]">[field:title/]</a>
-            </h3>
-            <p>
-              [field:info/]
-            </p>
-            <span class="ico_gd">
-              <a href="http://wpa.qq.com/msgrd?v=3&site={dede:global.cfg_companyname/}&menu=yes&uin=1037515501"
-                 target="_blank" title="立即咨询" class="ico_lj">立即咨询</a>
-              <a href="[field:arcurl/]" title="了解更多" target="_blank">了解更多</a>
-            </span>
-          </dd>
-        </dl>
-      </div>
-      {/dede:arclist}
 
+    <div class="pro_main">
+      <div id="printableview">
+        <div class="clear">
+        </div>
+        <div class="fenlei">
+          <div class="tit">
+            <a class="cur"><span>详细信息</span></a>
+            <div class="clear">
+            </div>
+          </div>
+        </div>
+        <div class="proinfo " id="detailvalue0">
+          <div class="nr_list">
+            <ul></ul>
+            <div class="clear"></div>
+          </div>
+          {dede:arclist channelid='1' titlelen='50' row='1' addfields='body'}
+          [field:body /]
+          {/dede:arclist}
+        </div>
+        <div class="clear">
+        </div>
+
+        <div class="pro_key">
+          {dede:tag getall='0' row='10'}
+          <a href='search.php?channeltype=1&keyword=[field:tag /]'>[field:tag /]</a>
+          {/dede:tag}
+        </div>
+
+      </div>
       <div class="clear">
       </div>
+
+      <div class="cps">
+        <div class="cptab">
+          <a href="javascript:void(0)" onmouseover="switchProdTab(this)" class="cr"
+             target_id="divRelevantViewedCntr">
+            浏览过此方案的人还浏览过</a>
+          <a href="javascript:void(0)" onmouseover="switchProdTab(this)" target_id="cptab_relevant">相关方案</a>
+          <div class="clear">
+          </div>
+        </div>
+
+        <div id="cntrRelevantProd">
+          <div id="divRelevantViewedCntr">
+            {dede:arclist channelid='1' typeid='38' addfields='body' row='3' orderby='rand' type='image.' imgwidth='222' imgheight='186'}
+            <dl>
+              <dt>
+                <a href="[field:arcurl/]" target="_blank" title="[field:title/]">
+                  [field:image/]
+                </a>
+              </dt>
+              <dd class="t1">
+                <h4>
+                  <a href="[field:arcurl/]" target="_blank" title="[field:title/]">[field:title/]</a>
+                </h4>
+                [field:info/]
+              </dd>
+            </dl>
+            {/dede:arclist}
+          </div>
+
+          <div id="cptab_relevant" style="display: none;">
+            {dede:arclist channelid='1' addfields='body' row='3' orderby='rand' type='image.' imgwidth='222' imgheight='186'}
+            <dl>
+              <dt>
+                <a target="_blank" href="[field:arcurl/]">
+                  [field:image/]
+                </a>
+              </dt>
+              <dd class="t1">
+                <a target="_blank" href="[field:arcurl/]">[field:title/]</a>
+              </dd>
+              <dd class="d1">
+                [field:info/]
+              </dd>
+            </dl>
+            {/dede:arclist}
+          </div>
+        </div>
+        <div class="clear">
+        </div>
+      </div>
+
     </div>
+
+
     <div class="rightbot">
     </div>
   </div>

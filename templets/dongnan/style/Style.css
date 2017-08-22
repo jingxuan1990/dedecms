@@ -9435,7 +9435,7 @@ dl.p_list_dl3 dd a:hover {
 }
 
 .fenlei {
-  background: url(Img/fenlei_line.gif) repeat-x top;
+  background: url(../images/common/fenlei_line.gif) repeat-x top;
   position: relative;
   padding-top: 10px;
   clear: both;
@@ -9451,7 +9451,7 @@ dl.p_list_dl3 dd a:hover {
 
 .fenlei .tit a {
   display: inline-block;
-  background: url(Img/pro_fenlei_a.gif) no-repeat left top;
+  background: url(../images/common/pro_fenlei_a.gif) no-repeat left top;
   padding-left: 4px;
   height: 25px;
   overflow: hidden;
@@ -9462,7 +9462,7 @@ dl.p_list_dl3 dd a:hover {
 }
 
 .fenlei .tit a span {
-  background: url(Img/pro_fenlei_span.gif) no-repeat right top;
+  background: url(../images/common/pro_fenlei_span.gif) no-repeat right top;
   height: 25px;
   float: left;
   padding: 7px 20px 0 15px;

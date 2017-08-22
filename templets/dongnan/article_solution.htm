@@ -64,6 +64,27 @@
       </div>
     </div>
 
+
+    <div id="divHistoryRecommentCntr" class="leib2 mt10">
+      <div class="tit"><span>为您推荐</span></div>
+      <div class="t05_con">
+        {dede:arclist channelid='1' typeid='38' row='5' orderby='sortrank' type='image.' imgwidth='168' imgheight='154'}
+        <dl class="t05_con_dl">
+          <dt>
+            <a href="[field:arcurl/]" title="[field:title/]">
+              [field:image/]
+            </a>
+          </dt>
+          <dd>
+            <a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a>
+          </dd>
+        </dl>
+        {/dede:arclist}
+        <div class="clear">
+        </div>
+      </div>
+    </div>
+
     <script type="text/javascript">
       var SID = '';
       var aid = "{dede:field.id/}";
@@ -136,7 +157,8 @@
 
         <div id="cntrRelevantProd">
           <div id="divRelevantViewedCntr">
-            {dede:arclist channelid='1' typeid='38' addfields='body' row='3' orderby='rand' type='image.' imgwidth='222' imgheight='186'}
+            {dede:arclist channelid='1' typeid='38' addfields='body' row='3' orderby='rand'
+            type='image.' imgwidth='222' imgheight='186'}
             <dl>
               <dt>
                 <a href="[field:arcurl/]" target="_blank" title="[field:title/]">
@@ -145,7 +167,8 @@
               </dt>
               <dd class="t1">
                 <h4>
-                  <a href="[field:arcurl/]" target="_blank" title="[field:title/]">[field:title/]</a>
+                  <a href="[field:arcurl/]" target="_blank"
+                     title="[field:title/]">[field:title/]</a>
                 </h4>
                 [field:info/]
               </dd>
@@ -154,7 +177,8 @@
           </div>
 
           <div id="cptab_relevant" style="display: none;">
-            {dede:arclist channelid='1' addfields='body' row='3' orderby='rand' type='image.' imgwidth='222' imgheight='186'}
+            {dede:arclist channelid='1' addfields='body' row='3' orderby='rand' type='image.'
+            imgwidth='222' imgheight='186'}
             <dl>
               <dt>
                 <a target="_blank" href="[field:arcurl/]">

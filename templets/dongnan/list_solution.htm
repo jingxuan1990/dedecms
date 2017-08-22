@@ -31,7 +31,7 @@
   if (MARK == "") {
     MARK = "index";
   }
-  //    initCommonHeaderKeywords(MARK);
+  //initCommonHeaderKeywords(MARK);
 </script>
 <!--Header:End-->
 
@@ -56,23 +56,10 @@
       <div class="nr">
         {dede:channelartlist typeid='38'}
         <h4 sid="0001,000{dede:field name='id'/}">
-          <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">{dede:field
-            name='typename'/}</a>
+          <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">
+            {dede:field name='typename'/}
+          </a>
         </h4>
-        <ul>
-          {dede:arclist titlelen='20' row='5'}
-          <li sid="0001,000[field:typeid runphp='yes' ]
-            global $dsql;
-            @typeid=@me
-            $dsql->SetQuery(" SELECT * FROM #@__arctype WHERE id=@typeid");
-              $dsql->Execute();
-            $row = $dsql->GetArray();
-            @me=$row['reid'];
-            [/field:typeid],000[field:id /]">
-            <a href="[field:arcurl /]" title="[field:title /]">[field:title/]</a>
-          </li>
-          {/dede:arclist}
-        </ul>
         {/dede:channelartlist}
       </div>
     </div>
@@ -104,7 +91,7 @@
     <div class="righttop">
     </div>
     <div class="pro_main">
-      {dede:arclist channelid='1' typeid='38' addfields='body' row='20' orderby='sortrank' type='image.' imgwidth='250' imgheight='248'}
+      {dede:arclist channelid='1' addfields='body' row='20' orderby='sortrank' type='image.' imgwidth='250' imgheight='248'}
       <div class="fls">
         <dl class="p_list_dl">
           <dt>

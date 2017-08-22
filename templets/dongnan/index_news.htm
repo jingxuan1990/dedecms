@@ -56,50 +56,28 @@
         </h4>
         <ul>
           {dede:php}
-            $id = $refObj->Fields['id'];
-            $sql = ("SELECT * FROM dede_arctype where reid ='$id'");
-            $db->SetQuery($sql);
-            $db->Execute();
-            if($db->GetTotalRow()){
-              while($row = $db->GetArray()){
-                $url = str_replace('{cmspath}','',($row[typedir]));
-                echo "<li><a href=".$url.">".($row[typename])."</a></li>";
-              };
-            };
+          $id = $refObj->Fields['id'];
+          $sql = ("SELECT * FROM dede_arctype where reid ='$id'");
+          $db->SetQuery($sql);
+          $db->Execute();
+          if($db->GetTotalRow()){
+          while($row = $db->GetArray()){
+          $url = str_replace('{cmspath}','',($row[typedir]));
+          echo "
+          <li><a href=".$url.">".($row[typename])."</a></li>
+          ";
+          };
+          };
           {/dede:php}
         </ul>
         {/dede:channelartlist}
       </div>
     </div>
 
+    <!-- 联系我们开始-->
+    {dede:include filename="contact_us.htm"/}
+    <!-- 联系我们结束-->
 
-    <div class="lxnr">
-      <h4 class="t05">
-        联系东南电工</h4>
-      <div class="lxnrs">
-        <div class="lximgs">
-          <img src="/UploadFiles/FCK/2014-12/6355553226068750003360294.jpg" alt="联系东南电工"/>
-        </div>
-        <p>
-            <span style=" font-weight:bold;color:#2ca5ea">广东东南输变电工程有限公司
-</span>
-        </p>
-        <p>
-            <span>400电话：020-85552011
-</span></p>
-
-        <p>
-            <span>邮编：510665
-</span></p>
-
-
-        <p><span>传真：020-85575364
-</span>
-        </p>
-        <p>
-          <span>地址：广州市天河软件园建中路66号佳都商务大厦东塔501</span></p>
-      </div>
-    </div>
   </div>
   <script type="text/javascript">
 
@@ -112,11 +90,11 @@
     newsSelectCurrentPosition();
   </script>
   <div class="right">
-
     <div class="plc">
-      <span><span>当前位置：</span><a href="/" title="首页">首页</a> &raquo; <a href='/news/'
-                                                                       title="东南电工资讯中心">东南电工资讯中心</a></span>
-
+      <span>
+        <span>当前位置：</span>
+       {dede:field.position/}
+      </span>
     </div>
 
     <div class="righttop mt10">
@@ -125,615 +103,29 @@
       <div class="news_con">
         <ul class="news_ul">
 
+          {dede:channelartlist channelid='1' typeid='29'}
+          {dede:arclist titlelen='20' row='20' orderby='pubdate' addfields='body'}
           <dl class="news_dl">
             <div class="time">
-              2015-04-08
+              [field:pubdate function="MyDate('Y-m-d',@me)"/]
             </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dndgwntgyz_1.html" target="_blank"
-                   title="东南电工为您提供一站式维护服务">
-              <img src="http://www.dnee.com.cn" alt="东南电工为您提供一站式维护服务"
-                   title="东南电工为您提供一站式维护服务"/></a></dt>
+            <dt>
+              <a href="[field:arcurl /]" target="_blank" title="[field:title /]">
+                [field:image/]
+              </a>
+            </dt>
             <dd>
               <h5>
-                <a href="http://www.dnee.com.cn/Article/dndgwntgyz_1.html" target="_blank"
-                   title="东南电工为您提供一站式维护服务">
-                  东南电工为您提供一站式维护服</a></h5>
+                <a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title /]</a>
+              </h5>
               <p>
-                为客户建立维护档案
-                针对客户的具体情况，提供量身订做的方案
-                定期对设备进行检修
-                提供全电房的清洁
-                讲授用电管理知识
-                提供培训，保证日常减少误操作
-                提供应急维修
+                [field:body /]
               </p>
             </dd>
           </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2015-04-08
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dqsbwhdzyx_1.html" target="_blank"
-                   title="电气设备维护的重要性">
-              <img src="http://www.dnee.com.cn" alt="电气设备维护的重要性"
-                   title="电气设备维护的重要性"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/dqsbwhdzyx_1.html" target="_blank"
-                   title="电气设备维护的重要性">
-                  电气设备维护的重要性</a></h5>
-              <p>
-                首先，对电力设备进行维护是设备本身的一种迫切需求。其次，电力法规明确要求对设备进行定期维护。
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2015-03-04
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/sbdqsbgz_1.html" target="_blank"
-                   title="沙伯电气设备改造">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20150304102343_60224.jpg"
-                   alt="沙伯电气设备改造"
-                   title="沙伯电气设备改造"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/sbdqsbgz_1.html" target="_blank"
-                   title="沙伯电气设备改造">
-                  沙伯电气设备改造</a></h5>
-              <p>
-                沙伯电气设备改造项目因原有高压柜使用年限较长，对安全运行产生不确定因素。公司解决了客户对设备质量要求高、设备更换现场施工要求难、停电申请协调工作复杂等种种难题，拆除原有旧式...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2015-03-04
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/stldqsbjng_1.html" target="_blank"
-                   title="斯坦雷电气设备节能工程">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20150304102140_54749.jpg"
-                   alt="斯坦雷电气设备节能工程"
-                   title="斯坦雷电气设备节能工程"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/stldqsbjng_1.html" target="_blank"
-                   title="斯坦雷电气设备节能工程">
-                  斯坦雷电气设备节能工程</a></h5>
-              <p>
-                斯坦雷电气设备节能工程项目分东区及永和开发区两个子项目，用电负荷均较大。（东区）项目采用6台变压器供电，（永和）项目采用5台变压器供电，两个子项目外电源均采用单回路。该项目...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2015-03-04
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/byqxgsy_1.html" target="_blank"
-                   title="变压器相关试验">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20150304143603_78086.jpg"
-                   alt="变压器相关试验"
-                   title="变压器相关试验"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/byqxgsy_1.html" target="_blank"
-                   title="变压器相关试验">
-                  变压器相关试验</a></h5>
-              <p>
-                电力变压器是发电厂、变电所和用电单位降压变电所的重要设备。由于其结构特点，具有电路和磁路、油纸组合绝缘、高、低压引出套管、调压分接开关，元件众多，因此电力变压器的试验项目较...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2015-03-04
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/gygxgsy_1.html" target="_blank"
-                   title="高压柜相关试验">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20150304143156_14121.jpg"
-                   alt="高压柜相关试验"
-                   title="高压柜相关试验"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/gygxgsy_1.html" target="_blank"
-                   title="高压柜相关试验">
-                  高压柜相关试验</a></h5>
-              <p>
-                高压柜用于电力系统发电、输电、配电、电能转换和消耗中起通断、控制或保护等作用，在整个电力工业中占有非常重要的地位。高压试验需分别对高压柜内主要元器件进行试验，包括高压断路器...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2015-01-16
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/jtkdqsbaz_1.html" target="_blank"
-                   title="加特可电气设备安装">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20150304094605_82423.jpg"
-                   alt="加特可电气设备安装"
-                   title="加特可电气设备安装"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/jtkdqsbaz_1.html" target="_blank"
-                   title="加特可电气设备安装">
-                  加特可电气设备安装</a></h5>
-              <p>
-                加特可电气设备安装110kv变电站及10kv配电系统均采用世界先进的一次设备及高智能化的保护控制系统，真正实现无人值班式自动运行。变电站从设计至投入使用仅一年时间，创造了一...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2015-01-06
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/tghdqsbaz_1.html" target="_blank"
-                   title="太古汇电气设备安装">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20150304101615_99571.jpg"
-                   alt="太古汇电气设备安装"
-                   title="太古汇电气设备安装"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/tghdqsbaz_1.html" target="_blank"
-                   title="太古汇电气设备安装">
-                  太古汇电气设备安装</a></h5>
-              <p>
-                太古汇电气设备安装包含了：高压制冷机组水泵供电系统、酒店供电系统、塔楼供电系统、文化中心供电系统，总容量大。
-                太古汇高低压设备全部采用外国进口原厂设备，其中低压柜采用了当下...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dqsbrhwhby_1.html" target="_blank"
-                   title="电气设备如何维护保养？">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154818_31426.jpg"
-                   alt="电气设备如何维护保养？"
-                   title="电气设备如何维护保养？"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/dqsbrhwhby_1.html" target="_blank"
-                   title="电气设备如何维护保养？">
-                  电气设备如何维护保养？</a></h5>
-              <p>
-                注意干燥，保持表面无尘土，防晒，过多的太阳辐射对器具表面不好。注意长期不用的时候拔掉开关，以防火灾。
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dndgywzyyn_1.html" target="_blank"
-                   title="东南电工业务主要有哪些？">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154834_45269.jpg"
-                   alt="东南电工业务主要有哪些？"
-                   title="东南电工业务主要有哪些？"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/dndgywzyyn_1.html" target="_blank"
-                   title="东南电工业务主要有哪些？">
-                  东南电工业务主要有哪些？</a></h5>
-              <p>
-                东南电工专业从事各种电压等级的输配电工程、电气设备材料的销售、输配电系统维护保养、技术改造等电力工程业务。业务遍布广州、深圳、佛山、东莞、惠州、中山等省内各地区，安装调试了...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dndgysmys_1.html" target="_blank"
-                   title="东南电工有什么优势？">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154842_63891.jpg"
-                   alt="东南电工有什么优势？"
-                   title="东南电工有什么优势？"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/dndgysmys_1.html" target="_blank"
-                   title="东南电工有什么优势？">
-                  东南电工有什么优势？</a></h5>
-              <p>
-                东南电工现场反应速度快速、售后服务持久、有15年服务世界著名跨国公司经验。东南电工拥有灵活性与创新能力的团队，能不断为客户提供优质的产品、完善的系统和可靠的解决方案，以满足...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/rhtgqyydkk_1.html" target="_blank"
-                   title="如何提高企业用电可靠性？">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154849_44764.jpg"
-                   alt="如何提高企业用电可靠性？"
-                   title="如何提高企业用电可靠性？"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/rhtgqyydkk_1.html" target="_blank"
-                   title="如何提高企业用电可靠性？">
-                  如何提高企业用电可靠性？</a></h5>
-              <p>
-                加强安全用电教育养成良好用电习惯。用电安全，应以预防为主，这就在于平时的管 理和监督，只有管理和监督切实到位才能有效的预 防事故。
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/pdsbbzyq_1.html" target="_blank"
-                   title="配电设备布置要求">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154506_33525.jpg"
-                   alt="配电设备布置要求"
-                   title="配电设备布置要求"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/pdsbbzyq_1.html" target="_blank"
-                   title="配电设备布置要求">
-                  配电设备布置要求</a></h5>
-              <p>
-                1、变电所低压配电室的配电设备布置，应符合国家标准《10kV及以下变电所设计规范》（GB．50053-94）的规定。
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dndgqtdlgc_1.html" target="_blank"
-                   title="东南电工浅谈电力工程的发展">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154515_19073.jpg"
-                   alt="东南电工浅谈电力工程的发展"
-                   title="东南电工浅谈电力工程的发展"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/dndgqtdlgc_1.html" target="_blank"
-                   title="东南电工浅谈电力工程的发展">
-                  东南电工浅谈电力工程的发展</a></h5>
-              <p>
-                电能因易于转换、传输、控制，从19世纪80年代以后，已逐步取代蒸汽动力，成为现代社会物质文明与精神文明的技术基础。20世纪以后，电能的生产主要靠火电厂、水电站和核电站。有条...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/mzdyhynxqz_1.html" target="_blank"
-                   title="满足多元化用能需求 智能电网发展势在必行">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154524_88160.jpg"
-                   alt="满足多元化用能需求 智能电网发展势在必行"
-                   title="满足多元化用能需求 智能电网发展势在必行"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/mzdyhynxqz_1.html" target="_blank"
-                   title="满足多元化用能需求 智能电网发展势在必行">
-                  满足多元化用能需求 智能电网</a></h5>
-              <p>
-                目前，要实现能源供应的高效、安全、环保和节能，要实现能源结构的调整，就需要发展智能电网。业内人士表示，智能电网可以通过信息化的网络，全面掌握发电和用户的信息，提高能源利用效...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/znxqpdzdhd_1.html" target="_blank"
-                   title="智能小区配电自动化的应用">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154533_48728.jpg"
-                   alt="智能小区配电自动化的应用"
-                   title="智能小区配电自动化的应用"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/znxqpdzdhd_1.html" target="_blank"
-                   title="智能小区配电自动化的应用">
-                  智能小区配电自动化的应用</a></h5>
-              <p>
-                近年来，智能电网(Smart Power Grids)已成为电力界的热门话题，被认为是改变未来电力系统面貌的电网发展模式。智能电网包括智能输电网和智能配电网(Smart
-                D...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/zndwdgjjs_1.html" target="_blank"
-                   title="智能电网的关键技术">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154545_51371.jpg"
-                   alt="智能电网的关键技术"
-                   title="智能电网的关键技术"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/zndwdgjjs_1.html" target="_blank"
-                   title="智能电网的关键技术">
-                  智能电网的关键技术</a></h5>
-              <p>
-                在能源转化、传输、使用这几个环节，其中发电环节是整个过程中最有可能减少排量的，所以智能电网采用风电水电多种新能源进行分布式发电和分布式储能，其中分布式发电技术有很多，例如风...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/gydqsbzznh_1.html" target="_blank"
-                   title="高压电器设备在智能化变电站中应用">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154624_33909.jpg"
-                   alt="高压电器设备在智能化变电站中应用"
-                   title="高压电器设备在智能化变电站中应用"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/gydqsbzznh_1.html" target="_blank"
-                   title="高压电器设备在智能化变电站中应用">
-                  高压电器设备在智能化变电站中</a></h5>
-              <p>
-                我国智能化变电站建设已经逐步进入了一个快速发展阶段，但是还有些观点存在分歧，其中最主要的是与一次设备的衔接问题。目前使用的一次设备有三种类型：传统的瓷柱式(AIS)变电站、...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/gddlgypjjy_1.html" target="_blank"
-                   title="广东电力供应偏紧 将迎来用电高峰期">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154557_16263.jpg"
-                   alt="广东电力供应偏紧 将迎来用电高峰期"
-                   title="广东电力供应偏紧 将迎来用电高峰期"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/gddlgypjjy_1.html" target="_blank"
-                   title="广东电力供应偏紧 将迎来用电高峰期">
-                  广东电力供应偏紧 将迎来用电</a></h5>
-              <p>
-                从广东电网公司获悉，5月广东用电同比增近一成，将迎来用电高峰期。广东电网公司表示，将加强电网建设，强化风险控制，提升防风防汛应对能力，千方百计保障广东电力有序供应。
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/2020nzgydl_1.html" target="_blank"
-                   title="2020年中国用电量将超过6万亿千瓦时">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154605_26639.jpg"
-                   alt="2020年中国用电量将超过6万亿千瓦时"
-                   title="2020年中国用电量将超过6万亿千瓦时"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/2020nzgydl_1.html" target="_blank"
-                   title="2020年中国用电量将超过6万亿千瓦时">
-                  2020年中国用电量将超过6</a></h5>
-              <p>
-                中国电力企业联合会理事长赵希正说，到2020年，中国发电装机容量预计达到10亿千瓦，全社会用电量将超过6万亿千瓦时。
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/sewgjydqhb_1.html" target="_blank"
-                   title="“十二五”国家应对气候变化科技发展专项规划正式发布">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141229194412_95383.jpg"
-                   alt="“十二五”国家应对气候变化科技发展专项规划正式发布"
-                   title="“十二五”国家应对气候变化科技发展专项规划正式发布"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/sewgjydqhb_1.html" target="_blank"
-                   title="“十二五”国家应对气候变化科技发展专项规划正式发布">
-                  “十二五”国家应对气候变化科</a></h5>
-              <p>
-                创新和应用，支撑我国可持续发展战略实施，支撑“十二五”时期和2020年单位GDP二氧化碳排放、非化石能源占一次能源消费比重、森林覆盖率和蓄积量等目标的实现。
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dndgxmjgxx_1.html" target="_blank"
-                   title="东南电工项目竣工喜讯">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154134_96293.jpg"
-                   alt="东南电工项目竣工喜讯"
-                   title="东南电工项目竣工喜讯"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/dndgxmjgxx_1.html" target="_blank"
-                   title="东南电工项目竣工喜讯">
-                  东南电工项目竣工喜讯</a></h5>
-              <p>
-                经过多个月的努力，相继有索尼电子、东罐容器、ICI、广汽丰通、金业纸业、海格科技楼、旭日雅苑等项目顺利竣工。在此向以上顺利送电的企业表示热烈的祝贺！
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dndgzzgsyg_1.html" target="_blank"
-                   title="东南电工组织公司员工参观工地现场">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154056_77102.jpg"
-                   alt="东南电工组织公司员工参观工地现场"
-                   title="东南电工组织公司员工参观工地现场"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/dndgzzgsyg_1.html" target="_blank"
-                   title="东南电工组织公司员工参观工地现场">
-                  东南电工组织公司员工参观工地</a></h5>
-              <p>
-                2014年公司组织内勤人员和设计、预算人员参观施工现场，帮助各位同事增加对项目工程管理和执行的理解与认识，同时也体验一下现场督导岗位的同事平时工作环境的艰辛，并且对工程部的...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/rlzhgztghp_1.html" target="_blank"
-                   title="热烈祝贺广州太古汇配电项目完成送电">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230154001_64163.jpg"
-                   alt="热烈祝贺广州太古汇配电项目完成送电"
-                   title="热烈祝贺广州太古汇配电项目完成送电"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/rlzhgztghp_1.html" target="_blank"
-                   title="热烈祝贺广州太古汇配电项目完成送电">
-                  热烈祝贺广州太古汇配电项目完</a></h5>
-              <p>
-                我们为广州市的标志性重点工程建设项目太古汇顺利完成配电送电工程。
-                该项目的送电时间段正好处于广州的亚运会期间，我们公司争分夺秒，克服重重困难，利用第16届亚运会和亚残运会的...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dgbezrxmsb_1.html" target="_blank"
-                   title="德国拜耳增容项目设备进场">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230153914_39105.jpg"
-                   alt="德国拜耳增容项目设备进场"
-                   title="德国拜耳增容项目设备进场"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/dgbezrxmsb_1.html" target="_blank"
-                   title="德国拜耳增容项目设备进场">
-                  德国拜耳增容项目设备进场</a></h5>
-              <p>
-                拜耳公司是世界最为知名的世界500强《财富》企业之一，在材料创新、作物科学及医药保健等众多领域位居业界前列，而广州拜耳材料科技有限公司是拜耳集团旗下独立运营的子公司，业务覆...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dndgxxghjd_1.html" target="_blank"
-                   title="东南电工喜讯：钢花机电和纳金建材项目送电">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230153813_24165.jpg"
-                   alt="东南电工喜讯：钢花机电和纳金建材项目送电"
-                   title="东南电工喜讯：钢花机电和纳金建材项目送电"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/dndgxxghjd_1.html" target="_blank"
-                   title="东南电工喜讯：钢花机电和纳金建材项目送电">
-                  东南电工喜讯：钢花机电和纳金</a></h5>
-              <p>
-                项目喜讯：经过多个月的努力，广州钢花机电有限公司及广州纳金建材有限公司永久用电项目于2012年9月17日和20日分别顺利送电，在此感谢所有参与该项目的同事，是你们的辛勤的付...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/klgzjkshds_1.html" target="_blank"
-                   title="快乐工作，健康生活——第四届东南运动会">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230153728_33845.jpg"
-                   alt="快乐工作，健康生活——第四届东南运动会"
-                   title="快乐工作，健康生活——第四届东南运动会"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/klgzjkshds_1.html" target="_blank"
-                   title="快乐工作，健康生活——第四届东南运动会">
-                  快乐工作，健康生活——第四届</a></h5>
-              <p>
-                二0一四年，东南公司举行了第二届东南运动会，该次运动会共有三项比赛项目：足球、羽毛球、乒乓球。赛前抽签分成ABC三队，所有队员必须参加一至二项运动比赛，比赛名单由每队自定。...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dndgvsmzdq_1.html" target="_blank"
-                   title="东南电工VS明珠电气2014足球友谊赛">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230153514_15205.jpg"
-                   alt="东南电工VS明珠电气2014足球友谊赛"
-                   title="东南电工VS明珠电气2014足球友谊赛"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/dndgvsmzdq_1.html" target="_blank"
-                   title="东南电工VS明珠电气2014足球友谊赛">
-                  东南电工VS明珠电气2014</a></h5>
-              <p>
-                东南电工应邀与明珠电气在番禺明珠体育足球场进行2014迎春足球友谊赛。双方队员的身影活跃在激情四溢的足球赛场，他们冒着寒冷在赛场上挥洒着青春的汗水，争抢—过人—防守—射门…...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/dndg2014cm_1.html" target="_blank"
-                   title="东南电工2014春茗暨白云山登高活动">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141230153424_58943.jpg"
-                   alt="东南电工2014春茗暨白云山登高活动"
-                   title="东南电工2014春茗暨白云山登高活动"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/dndg2014cm_1.html" target="_blank"
-                   title="东南电工2014春茗暨白云山登高活动">
-                  东南电工2014春茗暨白云山</a></h5>
-              <p>
-                2014年，东南电工2014年春茗设宴于依山傍水、风景秀丽的广州鹿鸣酒家。陈总向全体员工致以新春的问候和最诚挚的祝福,并对2014年的工作提出了殷切的期望，勉励大家在新的一...
-              </p>
-            </dd>
-          </dl>
-
-          <dl class="news_dl">
-            <div class="time">
-              2014-12-28
-            </div>
-            <dt><a href="http://www.dnee.com.cn/Article/rlqzdndgcl_1.html" target="_blank"
-                   title="热烈庆祝东南电工成立15周年">
-              <img src="http://www.dnee.com.cn/UploadFiles/News/20141229194257_55111.jpg"
-                   alt="热烈庆祝东南电工成立15周年"
-                   title="热烈庆祝东南电工成立15周年"/></a></dt>
-            <dd>
-              <h5>
-                <a href="http://www.dnee.com.cn/Article/rlqzdndgcl_1.html" target="_blank"
-                   title="热烈庆祝东南电工成立15周年">
-                  热烈庆祝东南电工成立15周年</a></h5>
-              <p>
-                2014年9月12日，东南电工组织员工登上有“羊城第一秀”美誉的白云山，标志着庆祝公司成立15周年活动正式拉开帷幕。活动伊始，参加人员统一着装，精神抖擞地由白云山正门进入，...
-              </p>
-            </dd>
-          </dl>
-
+          {/dede:arclist}
+          {/dede:channelartlist}
         </ul>
-
         <div class="clear">
         </div>
 
@@ -751,51 +143,12 @@
 <!--Footer:Start-->
 
 <!--底部开始-->
-<div class="foot">
-  <div class="footer">
-    <div class="f_nav">
-      <a href="http://www.dnee.com.cn/" title="东南首页" class="born">东南首页</a><a
-        href="http://www.dnee.com.cn/Products/dqsbazgc.html" title="电气设备安装">电气设备安装</a><a
-        href="http://www.dnee.com.cn/Products/dqsbjngzao.html" title="电气设备节能改造">电气设备节能改造</a><a
-        href="http://www.dnee.com.cn/gcal/gcal.aspx" title="工程案例">工程案例</a><a
-        href="http://www.dnee.com.cn/project/" title="客户服务">客户服务</a><a
-        href="http://www.dnee.com.cn/Helps/contactus.html" title="联系东南">联系东南</a><a
-        href="http://www.dnee.com.cn/sitemap.html" title="网站地图" target="_blank">网站地图</a>
-    </div>
-    <div class="f_con">
-      <div class="f_logo fl">
-        <a href="/" title="东南">
-          <img src="/Skins/Default/Img/Common/f_logo.jpg" alt="东南" title="东南"/></a></div>
-      <div class="f_text fl">
-        广东东南输变电工程有限公司 版权所有
-        <a href="http://www.miitbeian.gov.cn/" title="备案号：粤ICP备07039577号" target="_blank">备案号：粤ICP备07039577号</a><br/>
-        电话：020-85552011
-        传真：020-85575364<br/>
-        QQ：1037515501 EMAIL： <a href="mailto:project@dnee.com.cn" title="project@dnee.com.cn">
-        project@dnee.com.cn</a><br/>
-        地址：广州市天河软件园建中路66号佳都商务大厦东塔501<br/>
-        技术支持：<a title="技术支持：牛商网" href="http://www.nsw88.com/" target="_blank">牛商网</a>
-        <script>
-          var _hmt = _hmt || [];
-          (function () {
-            var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?aa1dc367fd5ff21eaaf3d5d5e6a8ef76";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-          })();
-        </script>
-      </div>
-      <div class="f_ewm fl">
-        <a href="javascript:;">
-          <img src="/Skins/Default/Img/Common/f_ewm.jpg" alt="二维码"/></a></div>
-    </div>
-  </div>
-</div>
+{dede:include filename="footer.htm"/}
 <!--底部结束-->
 
 
 <!-- 返回顶部 -->
-<script src="/JS/rollup.min.js" type="text/javascript"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/rollup.min.js" type="text/javascript"></script>
 
 <!-- Baidu Button BEGIN 百度分享开始 -->
 <script type="text/javascript" id="bdshare_js"

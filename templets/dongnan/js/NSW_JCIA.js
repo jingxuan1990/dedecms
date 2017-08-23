@@ -3121,7 +3121,7 @@
   })
 })();
 /*Common.js*/
-var SKIN_PATH = "/Skins/Default/";
+// var SKIN_PATH = "/Skins/Default/";
 var PTN_EMAIL = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
 var PTN_FLOAT = /\d+(\.\d+)?/;
 function $nsw() {

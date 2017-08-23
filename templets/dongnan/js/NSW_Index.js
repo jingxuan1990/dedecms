@@ -3122,7 +3122,7 @@
 })();
 
 /*Index.js*/
-var SKIN_PATH = "/Skins/default/";
+// var SKIN_PATH = "/Skins/default/";
 function initCommonHeader() {
   $.get("/ajax.ashx?action=initcommonheader&t=" + Math.random(), function (b) {
     var a = gav(b, "showIM");
@@ -3225,7 +3225,7 @@ function showProc(c, a) {
       b.remove()
     }
     $("<img src='" + SKIN_PATH
-        + "img/processing.gif' id='imgProc' alt='正在处理' />").insertAfter(c)
+        + "images/common/processing.gif' id='imgProc' alt='正在处理' />").insertAfter(c)
   } else {
     $(c).show();
     b.remove()
@@ -3258,9 +3258,9 @@ function $a(c, p, g, l, o, a) {
   if (f.length == 0) {
     var n = "<div id='mesbook1'><div><img style='float:right' onclick='hideMsg()' id='mesbook1ImgClose' src='"
         + SKIN_PATH
-        + "Img/ico9_close.gif' alt='关闭' class='fr p vam ml5' /><span id='mesbook1Title'></span></div><dl class='b1'><dt><img id='mesbook1Icon' src='"
+        + "images/common/ico9_close.gif' alt='关闭' class='fr p vam ml5' /><span id='mesbook1Title'></span></div><dl class='b1'><dt><img id='mesbook1Icon' src='"
         + SKIN_PATH
-        + "Img/message_ico_03.gif' alt='' title='' /></dt><dd class='l_25' id='mesbook1Msg'></dd><dd class='b' style='visibility:hidden' id='mesbook1AutoClose'>此窗口<span id='mesbook1Delay' style='margin:0 5px;'></span>秒钟后自动关闭。</dd><dd id='mesbook1Btns'><input type='button' class='b15' value='关 闭' /></dd></dl></div>";
+        + "images/common/message_ico_03.gif' alt='' title='' /></dt><dd class='l_25' id='mesbook1Msg'></dd><dd class='b' style='visibility:hidden' id='mesbook1AutoClose'>此窗口<span id='mesbook1Delay' style='margin:0 5px;'></span>秒钟后自动关闭。</dd><dd id='mesbook1Btns'><input type='button' class='b15' value='关 闭' /></dd></dl></div>";
     $(document.body).append(n)
   }
   var f = $j("mesbook1");
@@ -3273,7 +3273,7 @@ function $a(c, p, g, l, o, a) {
   var q = $j("mesbook1Btns");
   j.html(o);
   k.html(c);
-  var i = SKIN_PATH + "Img/";
+  var i = SKIN_PATH + "images/common/";
   switch (p) {
     case 1:
       i += "ico_ok.gif";
@@ -4305,7 +4305,6 @@ $cookie = function (d, g, b) {
 
 //首页提交
 function IndexsendLeaveword(src) {
-
   var regemail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   var PTN_FLOAT = /\d+(\.\d+)?/;
   var regphone = /^1[3-8]\d{9}$/;
@@ -4314,7 +4313,7 @@ function IndexsendLeaveword(src) {
   var verName = $j("txtName").val();
   var verCode = $j("txtVerCode").val();
   var verPhone = $j("txtPhone").val();
-  var verEmail = $j("txtEmail").val();
+  // var verEmail = $j("txtEmail").val();
   var verContent = $j("txtContent").val();
   var verAddress = $j("txtAddress").val();
   var err = "";
@@ -4334,11 +4333,11 @@ function IndexsendLeaveword(src) {
     err += "<p>电话不正确</p>";
   }
 
-  if (reg.test(verEmail)) {
-    err += "<p>邮件不可为空</p>";
-  } else if (!regemail.test(verEmail)) {
-    err += "<p>邮件格式错误</p>";
-  }
+  // if (reg.test(verEmail)) {
+  //   err += "<p>邮件不可为空</p>";
+  // } else if (!regemail.test(verEmail)) {
+  //   err += "<p>邮件格式错误</p>";
+  // }
 
   //    if (reg.test(verContent)) {
   //        err += "<p>内容不能为空</p>";
@@ -4357,23 +4356,27 @@ function IndexsendLeaveword(src) {
     return;
   }
   showProc(src);
-  $.post("/ajax.ashx?action=IndexsendLeaveword&t=" + Math.random(), {
-    verName: verName,
-    verContent: verContent,
-    verCode: verCode,
-    verPhone: verPhone,
-    verEmail: verEmail,
-    verAddress: verAddress
-  }, function (msg) {
-    var sta = gav(msg, "state");
-    var sMsg = gav(msg, "msg");
-    if (sta == "1") {
-      emptyText('chongz');
-      $a(sMsg, 1);
-
+  $.post(CMS_PATH + "plus/diy.php?action=post&diyid=2", {
+    contact: verName,
+    qq: verContent,
+    phone: verPhone,
+    validate: verCode,
+    do: 2,
+    dede_fields: 'contact,text;qq,text;phone,text'
+  }, function (q) {
+    var codeEle = document.getElementById("imgVali");
+    codeEle.src = CMS_PATH + "include/vdimgck.php?" + new Date().getTime();
+    if (q === "succ") {
+      $a("提交成功！", 1);
+      emptyText("chongz");
     } else {
-      $a(sMsg);
+      if ($.trim(q).indexOf("验证码不正确") != -1) {
+        $a("验证码错误！");
+      } else {
+        emptyText("chongz");
+      }
     }
+    // src.show()
     showProc(src, false);
   });
 }

@@ -81,15 +81,22 @@
 
   </div>
   <script type="text/javascript">
-
     $(".leib h4[sid='0001,0032']").next("ul").hide();
-
   </script>
 
   <script type="text/javascript">
-    var SID = "";
-    newsSelectCurrentPosition();
+    var SID = '';
+    var aid = "{dede:field.id/}";
+    var typeId = "{dede:type}[field:id /]{/dede:type}";
+
+    SID = '0001,000' + typeId;
+    if (aid !== '') {
+      SID = SID + ",000" + aid;
+    }
+    console.log("SID=" + SID);
+    productSelectCurrentPosition();
   </script>
+
   <div class="right">
     <div class="plc">
       <span>

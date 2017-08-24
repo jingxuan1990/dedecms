@@ -87,9 +87,13 @@
   </script>
 
   <script type="text/javascript">
-    var SID = "";
-    newsSelectCurrentPosition();
+    var SID = '';
+    var typeId = "{dede:type}[field:id /]{/dede:type}";
+    SID = '0001,000' + typeId;
+    console.log("SID=" + SID);
+    productSelectCurrentPosition();
   </script>
+
   <div class="right">
     <div class="plc">
       <span>
@@ -103,7 +107,7 @@
     <div class="right_main">
       <div class="news_con">
         <ul class="news_ul">
-          {dede:list pagesize='1'}
+          {dede:list pagesize='10'}
           <li>
             <a href="[field:typeurl/]" title="[field:typename/]">[[field:typename/]]</a>
             <a href="[field:arcurl /]" target="_blank"
@@ -116,13 +120,7 @@
         <div class="clear">
         </div>
         <div id="pagerMain" class="apage">
-          {dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}
-          <!--<span class="cust_txt">记录总数：27 | 页数：3</span>-->
-          <!--<a href="javascript:void(0)" class="cur">1</a>-->
-          <!--<a href="http://www.dnee.com.cn/zxzx-2.html">2</a>-->
-          <!--<a href="http://www.dnee.com.cn/zxzx-3.html">3</a>-->
-          <!--<a class="oran_pg_np" href="http://www.dnee.com.cn/zxzx-2.html">&nbsp;</a>-->
-          <!--<a class="oran_pg_lp" href="##">&nbsp;</a>-->
+          {dede:pagelist/}
         </div>
       </div>
     </div>

@@ -1258,7 +1258,7 @@ ul.news_ul {
 }
 
 ul.news_ul li {
-  background: url(Img/ico10.gif) no-repeat 0 11px;
+  background: url(../images/common/ico10.gif) no-repeat 0 11px;
   padding-left: 10px;
   height: 25px;
   font-family: "宋体";
@@ -2093,7 +2093,7 @@ ul.p_list_ul, ul.p_list_ul2 {
 }
 
 ul.p_list_ul li, ul.p_list_ul2 li {
-  background: url(Img/ico10.gif) no-repeat 10px 9px;
+  background: url(../images/common/ico10.gif) no-repeat 10px 9px;
   line-height: 23px;
   float: left;
   width: 298px;
@@ -4181,7 +4181,7 @@ dl.sear_dl dt.tit, .l2tit {
 
 dl.sear_dl dt.tit .tit_a, .l2tit .tit_a {
   height: 25px;
-  background: url(Img/ico10.gif) no-repeat 0 12px;
+  background: url(../images/common/ico10.gif) no-repeat 0 12px;
   overflow: hidden;
   white-space: nowrap;
   display: block;
@@ -5086,7 +5086,7 @@ dl.userinfo dd.d1 span {
   height: 30px;
   font-size: 14px;
   line-height: 30px;
-  background: url(Img/ico10.gif) no-repeat 0 14px;
+  background: url(../images/common/ico10.gif) no-repeat 0 14px;
   padding-left: 10px;
   white-space: nowrap;
   overflow: hidden;
@@ -7292,22 +7292,22 @@ dl.oder a:hover {
 }
 
 .apage .oran_pg_fp {
-  background: url(img/first_page.gif) 4px 4px no-repeat;
+  background: url(../images/common/first_page.gif) 4px 4px no-repeat;
   padding-right: 9px;
 }
 
 .apage .oran_pg_pp {
-  background: url(img/pre_page.gif) 4px 4px no-repeat;
+  background: url(../images/common/pre_page.gif) 4px 4px no-repeat;
   padding-right: 5px;
 }
 
 .apage .oran_pg_np {
-  background: url(img/next_page.gif) 8px 4px no-repeat;
+  background: url(../images/common/next_page.gif) 8px 4px no-repeat;
   padding-right: 12px;
 }
 
 .apage .oran_pg_lp {
-  background: url(img/last_page.gif) 8px 4px no-repeat;
+  background: url(../images/common/last_page.gif) 8px 4px no-repeat;
   padding-right: 12px;
 }
 

@@ -29,3 +29,33 @@ function getParentId($typeid)
     $row = $dsql->GetArray();
     return $row['reid'];
 }
+
+// 获取当前文档的关键字
+function getKeyWordsByDocId($docId)
+{
+    global $dsql;
+    $dsql->SetQuery("SELECT * FROM #@__archives WHERE id=$docId");
+    $dsql->Execute();
+    $row = $dsql->GetArray();
+    $keywords = $row['keywords'];
+
+    $output = '';
+    if (!empty($keywords)) {
+        foreach (explode(",", $keywords) as $keyword) {
+            $searchUrl = "search.php?channeltype=1&keyword=" . $keyword;
+            $output .= "<a target='_blank' href=\"$searchUrl\">" . $keyword . "</a>";
+        }
+    }
+    return $output;
+}
+
+// 获取文章的内容
+function getContentByDocId($docId)
+{
+    global $dsql;
+    $dsql->SetQuery("SELECT * FROM #@__addonarticle WHERE aid=$docId");
+    $dsql->Execute();
+    $row = $dsql->GetArray();
+    $body = $row['body'];
+    return $body;
+}

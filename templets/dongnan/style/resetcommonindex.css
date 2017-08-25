@@ -223,14 +223,14 @@ p {
 }
 
 .left2top {
-  background: url(../images/left2_top_img.gif) no-repeat;
+  background: url(../images/common/left2_top_img.gif) no-repeat;
   height: 3px;
   font-size: 0;
   overflow: hidden;
 }
 
 .leftbot {
-  background: url(../images/left_bot_img.gif) no-repeat;
+  background: url(../images/common/left_bot_img.gif) no-repeat;
   height: 3px;
   font-size: 0;
   overflow: hidden;

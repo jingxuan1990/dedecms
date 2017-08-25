@@ -83,6 +83,9 @@
           </div>
         </div>
         <div id="cntrBody">
+          <p style="TEXT-ALIGN: center"><span style="FONT-SIZE: 20px">{dede:field.title/}</span></p>
+          <p style="TEXT-ALIGN: center"><span style="FONT-SIZE: 11px">来源：{dede:field.source/}</span>
+          </p>
           {dede:field.id function="getContentByDocId(@me)"/}
         </div>
         <div class="clear"></div>
@@ -123,11 +126,14 @@
         {dede:field.id function="getKeyWordsByDocId(@me)"/}
       </div>
       <div class="n_info_con2">
-        <h4 class="t04">
-          相关资讯</h4>
+        <h4 class="t04">相关资讯</h4>
         <div class="info_b">
           <ul class="p_list_ul">
-
+            {dede:likearticle row='10' titlelen='50'}
+            <li>
+              <a target="_blank" href="[field:arcurl/]" title="[field:title/]">[field:title/]</a>
+            </li>
+            {/dede:likearticle}
           </ul>
           <div class="clear">
           </div>
@@ -136,33 +142,19 @@
         </div>
       </div>
       <div class="n_info_tjcp">
-        <h4 class="t04">
-          推荐产品</h4>
+        <h4 class="t04">推荐产品</h4>
+        {dede:arclist flag = 'c' typeid='16,17,18' row='3' orderby='pubdate' type='image.'
+        imgwidth='208' imgheight='173'}
         <dl>
-          <dt><a title='电气工程' target="_blank"
-                 href='http://www.dnee.com.cn/Products/dqgc_1.html'><img title='电气工程' alt='电气工程'
-                                                                         src='http://www.dnee.com.cn/UploadFiles/Product/20150227105059_58106.jpg'></a>
+          <dt>
+            <a title='[field:title/]' target="_blank" href='[field:arcurl/]'>
+              [field:image/]
+            </a>
           </dt>
-          <dd><a title='电气工程' target="_blank" href='http://www.dnee.com.cn/Products/dqgc_1.html'>电气工程</a>
+          <dd><a title='[field:title/]' target="_blank" href='[field:arcurl/]'>[field:title/]</a>
           </dd>
         </dl>
-        <dl>
-          <dt><a title='造价咨询' target="_blank"
-                 href='http://www.dnee.com.cn/Products/zjzxun.html'><img title='造价咨询' alt='造价咨询'
-                                                                         src='http://www.dnee.com.cn/UploadFiles/Product/20150117151907_18952.jpg'></a>
-          </dt>
-          <dd><a title='造价咨询' target="_blank" href='http://www.dnee.com.cn/Products/zjzxun.html'>造价咨询</a>
-          </dd>
-        </dl>
-        <dl>
-          <dt><a title='东南电工外电工程' target="_blank"
-                 href='http://www.dnee.com.cn/Products/dndgwdgc.html'><img title='东南电工外电工程'
-                                                                           alt='东南电工外电工程'
-                                                                           src='http://www.dnee.com.cn/UploadFiles/Product/20150117115435_22624.jpg'></a>
-          </dt>
-          <dd><a title='东南电工外电工程' target="_blank"
-                 href='http://www.dnee.com.cn/Products/dndgwdgc.html'>东南电工外电工程</a></dd>
-        </dl>
+        {/dede:arclist}
         <div class="celar"></div>
       </div>
     </div>
@@ -174,20 +166,47 @@
     </div>
     <div class="right2_main">
       <h4>
-        <img src="{dede:global.cfg_templets_skin/}/images/common/hot.jpg" alt="排行榜"/></h4>
+        <img src="{dede:global.cfg_templets_skin/}/images/common/hot.jpg" alt="排行榜"/>
+      </h4>
       <div id="newpro">
+        {dede:arclist typeid='16,17,18,26,27,28,29,38' row='8' titlelen='50' orderby='hot'
+        type='image.' imgwidth='104' imgheight='64'}
+        <h5 class="cur">
+          <a href="[field:arcurl/]"
+             title="[field:title/]" target="_blank">[field:title/]</a>
+        </h5>
+        <dl style="display: block;">
+          <dt>
+            <a href="[field:arcurl/]" title="[field:title/]" target="_blank">
+              [field:image/]
+            </a>
+          </dt>
+          <dd> [field:info/]</dd>
+          <div class="clear"></div>
+        </dl>
+        {/dede:arclist}
       </div>
       <h4 class="t03">
-        <a href="http://www.dnee.com.cn/dqsba.html" title="同类文章排行">同类文章排行</a></h4>
+        {dede:type}
+        <a href="[field:typelink/]" title="同类文章排行">同类文章排行</a></h4>
+      {/dede:type}
       <ul class="n_rt_ul">
+        {dede:arclist row='10' orderby='pubdate' titlelen='50' orderby=='hot' }
         <li>
-          <a href='http://www.dnee.com.cn/Article/nhbtgcjsxm_1.html' target='_blank'
-             title="南海本田工厂建设项目工程">南海本田工厂建设项目工程</a>
+          <a href='[field:arcurl/]' target='_blank' title="[field:title/]">[field:title/]</a>
         </li>
+        {/dede:arclist}
       </ul>
       <h4 class="t03">
-        <a href="http://www.dnee.com.cn/news/" title="最新资讯文章">最新资讯文章</a></h4>
+        <!--<a href="#url#" title="最新资讯文章">最新资讯文章</a>-->
+        {dede:field.id function="GetParentByDocId(@me)"/}
+      </h4>
       <ul class="n_rt_ul" id="cntrLastArticle">
+        {dede:arclist typeid='29' row='10' titlelen='50' orderby='pubdate' orderway='desc'}
+        <li>
+          <a href="[field:arcurl/]" target="_blank" title="[field:title/]">[field:title/]</a>
+        </li>
+        {/dede:arclist}
       </ul>
       <h4 class="t03">
         您的浏览历史</h4>
@@ -206,6 +225,13 @@
 <!--底部开始-->
 {dede:include filename="footer.htm"/}
 <!--底部结束-->
+
+<script type="text/javascript">
+  $("#newpro h5").mouseover(function () {
+    $(this).addClass("cur").siblings("h5").removeClass("cur").end().next(
+        "dl").show().siblings("dl").hide()
+  }).eq(0).trigger("mouseover");
+</script>
 
 
 <!-- 返回顶部 -->
@@ -234,20 +260,21 @@
 </script>
 </body>
 </html>
-<script type="text/javascript">    newsLoad();
-initCommonHeaderKeywords(MARK);
-(function () {
-  var c = null;
-  $(".m_qrinfo").hover(function () {
-    if (c) {
-      clearTimeout(c);
-      c = null;
-    }
-    $(this).children(".m_qrcode").slideDown();
-  }, function () {
-    var t = this;
-    c = setTimeout(function () {
-      $(t).children(".m_qrcode").slideUp(200);
-    }, 500);
-  });
-})();</script>
+<script type="text/javascript">
+  //newsLoad();
+  //initCommonHeaderKeywords(MARK);
+  (function () {
+    var c = null;
+    $(".m_qrinfo").hover(function () {
+      if (c) {
+        clearTimeout(c);
+        c = null;
+      }
+      $(this).children(".m_qrcode").slideDown();
+    }, function () {
+      var t = this;
+      c = setTimeout(function () {
+        $(t).children(".m_qrcode").slideUp(200);
+      }, 500);
+    });
+  })();</script>

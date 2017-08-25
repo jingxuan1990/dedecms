@@ -4257,13 +4257,13 @@ function helpSelectCurrentPosition() {
   }
 }
 function newsLoad() {
-  hits(OBJ_ID, MARK);
-  getHits(OBJ_ID, MARK);
-  writeComment(OBJ_ID, MARK);
-  getLastArticle();
-  getHistory(MARK);
-  addHistory(OBJ_ID, MARK);
-  getNewProduct()
+  // hits(OBJ_ID, MARK);
+  // getHits(OBJ_ID, MARK);
+  // writeComment(OBJ_ID, MARK);
+  // getLastArticle();
+  // getHistory(MARK);
+  // addHistory(OBJ_ID, MARK);
+  // getNewProduct()
 }
 function newsSelectCurrentPosition() {
   $(".nr h4[sid='" + SID + "'],.nr li[sid='" + SID + "']").addClass("cur")

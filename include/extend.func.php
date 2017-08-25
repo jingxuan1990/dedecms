@@ -20,7 +20,7 @@ function litimgurls($imgid = 0)
     return $lit_imglist;
 }
 
-// 获取父栏目的id
+// 获取当前父栏目的id
 function getParentId($typeid)
 {
     global $dsql;
@@ -28,6 +28,30 @@ function getParentId($typeid)
     $dsql->Execute();
     $row = $dsql->GetArray();
     return $row['reid'];
+}
+
+// 获取当前父栏目的链接，用于list_*.htm
+function getParentIdATag($typeid)
+{
+    global $dsql;
+    $dsql->SetQuery("SELECT * FROM #@__arctype WHERE id=$typeid");
+    $dsql->Execute();
+    $row = $dsql->GetArray();
+    $reId = $row['reid'];
+    $title = $row['typename'];
+    $ret = "<a href='plus/list.php?tid=" . $reId . "' title=" . $title . ">" . $title . "</a>";
+    return $ret;
+}
+
+//获取文档的父栏目的父栏目的链接地址
+function GetParentByDocId($docId)
+{
+    global $dsql;
+    $row = $dsql->GetOne("SELECT * FROM #@__archives where id=$docId");
+    $typeId = $row['typeid'];
+    $row = $dsql->GetOne("SELECT * FROM  #@__arctype WHERE id= $typeId");
+    $aTag = "<a href='" . $GLOBALS['cfg_cmspath'] . "/plus/list.php?tid=" . $row['reid'] . "' title='最新资讯文章'>最新资讯文章</a>";
+    return $aTag;
 }
 
 // 获取当前文档的关键字
@@ -58,4 +82,16 @@ function getContentByDocId($docId)
     $row = $dsql->GetArray();
     $body = $row['body'];
     return $body;
+}
+
+function GetCurUrl()
+{
+    if (!empty($_SERVER['REQUEST_URI'])) {
+        $nowurl = $_SERVER['REQUEST_URI'];
+        $nowurls = explode('?', $nowurl);
+        $nowurl = $nowurls[0];
+    } else {
+        $nowurl = $_SERVER['PHP_SELF'];
+    }
+    return $nowurl;
 }

@@ -2193,7 +2193,7 @@ ul.p_list_ul2 li {
 /* -- 右侧新闻列表 -- */
 /* -- 右侧新闻列表 -- */
 ul.n_rt_ul {
-  background: url(Img/news_list_bg.gif) no-repeat 0 5px;
+  background: url(../images/common/news_list_bg.gif) no-repeat 0 5px;
   width: 230px;
   margin: 8px auto;
   overflow: hidden;

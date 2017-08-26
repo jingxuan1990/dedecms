@@ -60,7 +60,9 @@
           if($db->GetTotalRow()){
           while($row = $db->GetArray()){
           $url = str_replace('{cmspath}','',($row[typedir]));
-          echo "<li sid='0001,000$id,000$row[id]'><a href=".$url.">".($row[typename])."</a></li>";
+          echo "
+          <li sid='0001,000$id,000$row[id]'><a href=".$url.">".($row[typename])."</a></li>
+          ";
           };
           };
           {/dede:php}
@@ -83,8 +85,7 @@
     var SID = "";
     var currentId = "{dede:field.id/}";
     var parentId = "{dede:field name='typeid' function='getParentId(@me)'/}";
-
-    SID = '0001,000' + parentId+",000" + currentId;
+    SID = '0001,000' + parentId + ",000" + currentId;
     console.log("SID=" + SID);
     productSelectCurrentPosition();
   </script>
@@ -101,33 +102,21 @@
     </div>
     <div class="right_main">
       <div class="news_con">
-        <ul class="news_ul">
+        {dede:arclist titlelen='50' row='50' orderby='pubdate' addfields='body' type='image.'}
+        <dl class="dlh_hz">
+          <dt>
+            <a href="[field:arcurl /]" target="_blank" title="[field:title /]">
+              [field:image/]
+            </a>
+          </dt>
+          <dd>
+            <a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title /]</a>
+          </dd>
+        </dl>
+        {/dede:arclist}
 
-          {dede:arclist titlelen='50' row='20' orderby='pubdate' addfields='body'}
-          <dl class="news_dl">
-            <div class="time">
-              [field:pubdate function="MyDate('Y-m-d',@me)"/]
-            </div>
-            <dt>
-              <a href="[field:arcurl /]" target="_blank" title="[field:title /]">
-                [field:image/]
-              </a>
-            </dt>
-            <dd>
-              <h5>
-                <a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title
-                  /]</a>
-              </h5>
-              <p>
-                [field:body /]
-              </p>
-            </dd>
-          </dl>
-          {/dede:arclist}
-        </ul>
         <div class="clear">
         </div>
-
       </div>
     </div>
     <div class="rightbot">

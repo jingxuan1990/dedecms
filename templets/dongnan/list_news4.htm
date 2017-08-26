@@ -27,7 +27,7 @@
 
 <script type="text/javascript">
   //    heaernavcs();
-  initCommonHeader();
+//  initCommonHeader();
   var MARK = "news";
   if (MARK == "") {
     MARK = "index";
@@ -78,16 +78,17 @@
     <!-- 联系我们结束-->
 
   </div>
-  <script type="text/javascript">
-    $(".leib h4[sid='0001,0032']").next("ul").hide();
-  </script>
 
   <script type="text/javascript">
     // 三级目录时使用
     var SID = "";
     var currentId = "{dede:field.id/}";
     var parentId = "{dede:field name='typeid' function='getParentId(@me)'/}";
-    SID = '0001,000' + parentId + ",000" + currentId;
+    if('29' === parentId) {
+      SID =   '0001,000' + currentId;
+    }else {
+      SID = '0001,000' + parentId + ",000" + currentId;
+    }
     console.log("SID=" + SID);
     productSelectCurrentPosition();
   </script>

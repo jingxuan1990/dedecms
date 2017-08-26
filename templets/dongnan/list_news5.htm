@@ -12,6 +12,7 @@
         type="text/css"/>
   <link href="{dede:global.cfg_templets_skin/}/style/Style.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/NSW_JCIA.js"></script>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/custom.js"></script>
 </head>
 <body>
 <!--Header:Start-->
@@ -26,7 +27,7 @@
 
 <script type="text/javascript">
   //    heaernavcs();
-//  initCommonHeader();
+  //  initCommonHeader();
   var MARK = "news";
   if (MARK == "") {
     MARK = "index";
@@ -40,46 +41,6 @@
 {dede:include filename="news_nav_pic.htm"/}
 
 <div class="content">
-  <div class="left">
-    <div class="leib">
-      <div class="tit">
-        <span>{dede:field.typename typeid="29" /}</span>
-      </div>
-      <div class="nr">
-        {dede:channelartlist typeid='29'}
-        <h4 sid="0001,000{dede:field name='id'/}">
-          <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">
-            {dede:field name='typename'/}</a>
-        </h4>
-        <ul>
-          {dede:php}
-          $id = $refObj->Fields['id'];
-          $sql = ("SELECT * FROM dede_arctype where reid ='$id'");
-          $db->SetQuery($sql);
-          $db->Execute();
-          if($db->GetTotalRow()){
-          while($row = $db->GetArray()){
-          $url = str_replace('{cmspath}','',($row[typedir]));
-          echo "
-          <li sid='0001,000$id,000$row[id]'><a href=".$url.">".($row[typename])."</a></li>
-          ";
-          };
-          };
-          {/dede:php}
-        </ul>
-        {/dede:channelartlist}
-      </div>
-    </div>
-
-    <!-- 联系我们开始-->
-    {dede:include filename="contact_us.htm"/}
-    <!-- 联系我们结束-->
-
-  </div>
-  <script type="text/javascript">
-//    $(".leib h4[sid='0001,0032']").next("ul").hide();
-  </script>
-
   <script type="text/javascript">
     // 三级目录时使用
     var SID = "";
@@ -90,7 +51,8 @@
     productSelectCurrentPosition();
   </script>
 
-  <div class="right">
+  <div class="rights">
+
     <div class="plc">
       <span>
         <span>当前位置：</span>
@@ -98,30 +60,41 @@
       </span>
     </div>
 
-    <div class="righttop mt10">
-    </div>
-    <div class="right_main">
-      <div class="news_con">
-        {dede:arclist titlelen='50' row='50' orderby='pubdate' addfields='body' type='image.'}
-        <dl class="dlh_hz">
-          <dt>
+    <div class="right_mains">
+      <div class="news_cons">
+
+        {dede:list pagesize='30'}
+        <dl class="dlh_al">
+          <dt class="fr">
             <a href="[field:arcurl /]" target="_blank" title="[field:title /]">
-              [field:image/]
+              [field:image /]
             </a>
           </dt>
           <dd>
-            <a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title /]</a>
+            <h5>
+              <a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title /]</a>
+            </h5>
+            <p>
+              [field:description /]...
+            </p>
+            <span class="ico_gds">
+              <a href="http://wpa.qq.com/msgrd?v=3&amp;site=[field:global.cfg_companyname/]&amp;menu=yes&amp;uin=1037515501"
+                 target="_blank" title="立即咨询" class="ico_nw">立即咨询</a>
+              <a href="[field:arcurl /]" title="了解更多" target="_blank">了解更多</a>
+            </span>
           </dd>
         </dl>
-        {/dede:arclist}
+        {/dede:list}
 
         <div class="clear">
         </div>
+        <div id="pagerMain" class="apage">
+          {dede:pagelist/}
+        </div>
       </div>
     </div>
-    <div class="rightbot">
-    </div>
   </div>
+
   <div class="clear">
   </div>
 </div>
@@ -129,6 +102,9 @@
 </div>
 <!--content:end-->
 <!--Footer:Start-->
+<script type="text/javascript">
+  changePicLocation();
+</script>
 
 <!--底部开始-->
 {dede:include filename="footer.htm"/}

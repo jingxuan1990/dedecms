@@ -11,17 +11,17 @@
     <ul>
       {dede:php}
       $id = $refObj->Fields['id'];
-      $sql = ("SELECT * FROM dede_arctype where reid ='$id'");
-      $db->SetQuery($sql);
-      $db->Execute();
-      if($db->GetTotalRow()){
-      while($row = $db->GetArray()){
-      $url = str_replace('{cmspath}','',($row[typedir]));
-      echo "
-      <li sid='0001,000$id,000$row[id]'><a href=".$url.">".($row[typename])."</a></li>
-      ";
-      };
-      };
+      if($id!=32){
+        $sql = ("SELECT * FROM dede_arctype where reid ='$id'");
+        $db->SetQuery($sql);
+        $db->Execute();
+        if($db->GetTotalRow()){
+        while($row = $db->GetArray()){
+        $url = str_replace('{cmspath}','',($row[typedir]));
+        echo "<li sid='0001,000$id,000$row[id]'><a href=".$url.">".($row[typename])."</a></li>";
+        };
+        };
+      }
       {/dede:php}
     </ul>
     {/dede:channelartlist}

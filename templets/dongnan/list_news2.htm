@@ -41,33 +41,7 @@
 
 <div class="content">
   <div class="left">
-    <div class="leib">
-      <div class="tit">
-        <span>{dede:field.typename typeid="29" /}</span>
-      </div>
-      <div class="nr">
-        {dede:channelartlist typeid='29'}
-        <h4 sid="0001,000{dede:field name='id'/}">
-          <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">
-            {dede:field name='typename'/}</a>
-        </h4>
-        <ul>
-          {dede:php}
-          $id = $refObj->Fields['id'];
-          $sql = ("SELECT * FROM dede_arctype where reid ='$id'");
-          $db->SetQuery($sql);
-          $db->Execute();
-          if($db->GetTotalRow()){
-          while($row = $db->GetArray()){
-          $url = str_replace('{cmspath}','',($row[typedir]));
-          echo "<li sid='0001,000$id,000$row[id]'><a href=".$url.">".($row[typename])."</a></li>";
-          };
-          };
-          {/dede:php}
-        </ul>
-        {/dede:channelartlist}
-      </div>
-    </div>
+    {dede:include filename="news_left.htm"/}
 
     <!-- 联系我们开始-->
     {dede:include filename="contact_us.htm"/}

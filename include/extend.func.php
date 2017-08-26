@@ -84,14 +84,72 @@ function getContentByDocId($docId)
     return $body;
 }
 
-function GetCurUrl()
+// 首页图片分组功能
+function getImageGroupByTypeId($typeid)
 {
-    if (!empty($_SERVER['REQUEST_URI'])) {
-        $nowurl = $_SERVER['REQUEST_URI'];
-        $nowurls = explode('?', $nowurl);
-        $nowurl = $nowurls[0];
-    } else {
-        $nowurl = $_SERVER['PHP_SELF'];
+    global $dsql;
+    $output = '';
+    $groupNum = 6;
+
+    $template = <<<HTML
+<div class="kh02 fl">
+  <ul>
+    ###LI###
+  </ul>
+</div>
+HTML;
+
+    $dsql->SetQuery("SELECT id, litpic, title FROM #@__archives where typeid=$typeid");
+    $dsql->Execute();
+
+    $total = 0;
+    $data = array();
+    while ($row = $dsql->GetArray()) {
+        $data[$total] = $row;
+        $total++;
     }
-    return $nowurl;
+
+    $groupCount = ceil($total / $groupNum);
+
+    if ($groupCount == 1) {
+        $aTag = '';
+        foreach ($data as $row) {
+            $id = $row['id'];
+            $image = $row['litpic'];
+            $title = $row['title'];
+            $arcurl =  GetOneArchive($id)['arcurl'];
+            $temp = "<li><a href=\"$arcurl\" title=\"$title\"><img src=\"$image\" alt=\"$title\" title=\"$title\"/></a></li>";
+            $aTag .= $temp;
+        }
+        $output .= str_replace("###LI###", $aTag, $template);
+    } else {
+        $aTag = '';
+        $count = 0;
+        $groupData = array();
+        $groupIndex = 0;
+        foreach ($data as $row) {
+            $count++;
+            $id = $row['id'];
+            $image = $row['litpic'];
+            $title = $row['title'];
+            $arcurl = GetOneArchive($id)['arcurl'];
+            $temp = "<li><a href=\"$arcurl\" title=\"$title\"><img src=\"$image\" alt=\"$title\" title=\"$title\"/></a></li>";
+            $aTag .= $temp;
+            if ($count == $groupNum) {
+                $groupData[$groupIndex] = $aTag;
+                $groupIndex++;
+                $aTag = '';
+                $count = 0;
+            }
+        }
+
+        if ($count != 0) {
+            $groupData[++$groupIndex] = $aTag;
+        }
+
+        foreach ($groupData as $item) {
+            $output .= str_replace("###LI###", $item, $template);
+        }
+    }
+    return $output;
 }

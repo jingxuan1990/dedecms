@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+  {dede:include filename="meta.htm"/}
+  <script language="javascript">
+    var MARK = "news";
+    var SKIN_PATH = "{dede:global.cfg_templets_skin/}/";
+    var CMS_PATH = "{dede:global.cfg_cmsurl/}/";
+  </script>
+  <link href="{dede:global.cfg_templets_skin/}/style/resetcommon.css" rel="stylesheet"
+        type="text/css"/>
+  <link href="{dede:global.cfg_templets_skin/}/style/Style.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/NSW_JCIA.js"></script>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/custom.js"></script>
+</head>
+<body>
+<!--Header:Start-->
+
+<!--头部开始-->
+{dede:include filename="head.htm"/}
+<!--头部结束-->
+
+<!-- 关键字和搜索开始 -->
+{dede:include filename="search_input.htm"/}
+<!-- 关键字和搜索结束 -->
+
+<script type="text/javascript">
+  //    heaernavcs();
+  //  initCommonHeader();
+  var MARK = "news";
+  if (MARK == "") {
+    MARK = "index";
+  }
+  //    initCommonHeaderKeywords(MARK);
+</script>
+
+<!--Header:End-->
+<!--content:start-->
+<!-- 导航下的图片显示 -->
+{dede:include filename="news_nav_pic.htm"/}
+
+
+<div class="content">
+  <div class="left">
+    {dede:include filename="news_left.htm"/}
+
+    <!-- 联系我们开始-->
+    {dede:include filename="contact_us.htm"/}
+    <!-- 联系我们结束-->
+
+  </div>
+
+  <script type="text/javascript">
+    // 三级目录时使用
+    var SID = "";
+    var currentId = "{dede:field.id/}";
+    var parentId = "{dede:field name='typeid' function='getParentId(@me)'/}";
+    if('29' === parentId) {
+      SID =   '0001,000' + currentId;
+    }else {
+      SID = '0001,000' + parentId + ",000" + currentId;
+    }
+    console.log("SID=" + SID);
+    productSelectCurrentPosition();
+  </script>
+
+  <div class="right">
+    <div class="plc">
+      <span>
+        <span>当前位置：</span>
+       {dede:field.position/}
+      </span>
+    </div>
+
+    <div class="righttop mt10">
+    </div>
+    <div class="right_main">
+      <div class="news_con">
+        {dede:list pagesize='30'}
+        <dl class="dlh_al">
+          <dt class="fr">
+            <a href="[field:arcurl /]" target="_blank" title="[field:title /]">
+              [field:image/]
+            </a>
+          </dt>
+          <dd>
+            <h5>
+              <a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title /]</a>
+            </h5>
+            <p>
+              [field:infos/]...
+            </p>
+            <a class="cus_more" href="[field:arcurl /]" target="_blank" title="查看更多">[查看更多]</a>
+          </dd>
+        </dl>
+        {/dede:list}
+
+        <div class="clear">
+        </div>
+        <div id="pagerMain" class="apage">
+          {dede:pagelist/}
+        </div>
+      </div>
+    </div>
+    <div class="rightbot">
+    </div>
+  </div>
+  <div class="clear">
+  </div>
+</div>
+<div class="clear">
+</div>
+<!--content:end-->
+<!--Footer:Start-->
+<script type="text/javascript">
+  changePicLocation();
+</script>
+
+<!--底部开始-->
+{dede:include filename="footer.htm"/}
+<!--底部结束-->
+
+
+<!-- 返回顶部 -->
+<script src="{dede:global.cfg_templets_skin/}/js/rollup.min.js" type="text/javascript"></script>
+
+<!-- Baidu Button BEGIN 百度分享开始 -->
+<script type="text/javascript" id="bdshare_js"
+        data="type=slide&amp;img=2&amp;pos=left&amp;uid=774763"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+  $(function () {
+    document.getElementById(
+        "bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion="
+        + Math.ceil(new Date() / 3600000);
+  });
+</script>
+<!-- Baidu Button END 百度分享结束 -->
+<!--[if IE 6]>
+<script src="/JS/DD_belatedPNG.js"></script>
+<![endif]-->
+
+<!--Footer:End-->
+</body>
+<script type="text/javascript">
+  $(function () {
+    if ($(".h_nav ul li").eq(7).attr("class") == "cur") {
+      $(".h_nav ul li").eq(0).removeClass("cur");
+    }
+  });
+</script>
+</html>

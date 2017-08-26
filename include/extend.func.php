@@ -177,3 +177,17 @@ function getImagesTypeId($typeid)
     }
     return $liTag;
 }
+
+
+//获取文档的父栏目的父栏目的链接地址
+function getImgAndTitleByDocId($docId)
+{
+    global $dsql;
+    $row = $dsql->GetOne("SELECT * FROM #@__archives where id=$docId");
+    $image = $row['litpic'];
+    $title = $row['title'];
+
+    $output = "<p style=\"text-align: center\"><img src=\"$image\" border=\"0\" width=\"600\" height=\"450\" alt=\"$title\"></p>";
+    $output .= "<p style=\"text-align: center;\">$title</p>";
+    return $output;
+}

@@ -301,7 +301,9 @@
   </h2>
   <ul class="cptils">
     <span class="more01 fr">
-      <a href="#" title="查看我们更多案例">查看我们更多案例>></a>
+      {dede:type typeid='32'}
+      <a href="[field:typeurl/]" title="查看我们更多案例">查看我们更多案例>></a>
+      {/dede:type}
     </span>
     {dede:type typeid='45'}
     <li class="gcal cur" onmousemove="qiehuan(this)" _id="gc1">
@@ -449,58 +451,21 @@
   </div>
 </div>
 <div class="content">
-  <!--东南长期合作伙伴-->
-
+  <!--长期合作伙伴-->
   <div class="hz">
     <h2 class="til02">
-      <a href="#" title="东南长期合作伙伴">
-        东南长期合作伙伴</a><span class="more01"><a href="#"
-                                            title="更多">MORE +</a></span></h2>
+      {dede:type typeid='41'}
+      <a href="[field:typeurl/]" title="东南长期合作伙伴">东南长期合作伙伴</a>
+      <span class="more01">
+        <a href="[field:typeurl/]" title="更多">MORE +</a>
+      </span>
+      {/dede:type}
+    </h2>
     <div class="hz_c">
       <a href="javascript:;" id="LeftID1" class="hz01 prev fl"></a>
       <div class="hz02 fl" id="ScollName1">
         <ul>
-
-          <li><a href="#" title="东南电工合作伙伴：顺特电气"
-                 target="_blank">
-            <img src="{dede:global.cfg_templets_skin/}/images/2015-01/6355691154640682379469627.jpg"
-                 alt="东南电工合作伙伴：顺特电气"
-                 title="东南电工合作伙伴：顺特电气"/></a><span><a
-              href="http://www.dnee.com.cn/Article/dndghzhbst_1.html"
-              title="东南电工合作伙伴：顺特电气" target="_blank">东南电工合作伙伴：顺特电气</a></span></li>
-
-          <li><a href="#" title="东南电工合作伙伴：施耐德"
-                 target="_blank">
-            <img src="{dede:global.cfg_templets_skin/}/images/20150306111200_77632.jpg"
-                 alt="东南电工合作伙伴：施耐德"
-                 title="东南电工合作伙伴：施耐德"/></a><span><a
-              href="http://www.dnee.com.cn/Article/dndghzhbsn_1.html"
-              title="东南电工合作伙伴：施耐德" target="_blank">东南电工合作伙伴：施耐德</a></span></li>
-
-          <li><a href="#" title="东南电工合作伙伴：ABB"
-                 target="_blank">
-            <img src="{dede:global.cfg_templets_skin/}/images/2015-01/6355691094235271225191707.jpg"
-                 alt="东南电工合作伙伴：ABB"
-                 title="东南电工合作伙伴：ABB"/></a><span><a
-              href="http://www.dnee.com.cn/Article/dndghzhbab_1.html"
-              title="东南电工合作伙伴：ABB" target="_blank">东南电工合作伙伴：ABB</a></span></li>
-
-          <li><a href="#" title="东南电工合作伙伴：西门子"
-                 target="_blank">
-            <img src="{dede:global.cfg_templets_skin/}/images/2015-01/6355691108576345527742412.jpg"
-                 alt="东南电工合作伙伴：西门子"
-                 title="东南电工合作伙伴：西门子"/></a><span><a
-              href="http://www.dnee.com.cn/Article/dndghzhbxm_1.html"
-              title="东南电工合作伙伴：西门子" target="_blank">东南电工合作伙伴：西门子</a></span></li>
-
-          <li><a href="#" title="东南电工合作伙伴：康明斯"
-                 target="_blank">
-            <img src="{dede:global.cfg_templets_skin/}/images/2015-01/6355691126295230971738964.jpg"
-                 alt="东南电工合作伙伴：康明斯"
-                 title="东南电工合作伙伴：康明斯"/></a><span><a
-              href="http://www.dnee.com.cn/Article/dndghzhbkm_1.html"
-              title="东南电工合作伙伴：康明斯" target="_blank">东南电工合作伙伴：康明斯</a></span></li>
-
+          {dede:field.typeid function="getImagesTypeId(41)"/}
         </ul>
       </div>
       <a href="javascript:;" id="RightID1" class="hz01 next fl"></a>
@@ -531,93 +496,57 @@
 
   <div class="jz">
     <h2 class="til02">
-      <a href="#" title="客户眼中的我们">
-        客户眼中的我们</a><span class="more01"><a href="#"
-                                           title="更多">MORE +</a></span></h2>
+      {dede:type typeid='42'}
+      <a href="[field:typeurl/]" title="客户眼中的我们">客户眼中的我们</a>
+      <span class="more01">
+          <a href="[field:typeurl/]" title="更多">MORE +</a>
+      </span>
+      {/dede:type}
+    </h2>
     <div class="jz_c">
-
+      {dede:arclist typeid='42' titlelen='50' row='3' orderby='pubdate'}
       <dl>
-        <dt><a href="#" title="东南电工非常专业，值得我们信赖"
-               target="_blank">
-          <img
-              src="{dede:global.cfg_templets_skin/}/images/20141230092902_21554.jpg"
-              alt="东南电工非常专业，值得我们信赖"
-              title="东南电工非常专业，值得我们信赖"/></a></dt>
+        <dt>
+          <a href="[field:arcurl /]" title="[field:title/]" target="_blank">
+            [field:image/]
+          </a>
+        </dt>
         <dd>
           <h3>
-            <a href="#" title="东南电工非常专业，值得我们信赖"
-               target="_blank">
-              东南电工非常专业，值得我们信赖
+            <a href="[field:arcurl /]" title="[field:title/]" target="_blank">
+              [field:title/]
             </a>
           </h3>
           <p>
-            今年年初我司和东南电工合作，他们为我们充分了解我们的需求和实...
+            [field:infos/]...
           </p>
-          <span><a href="#" title="查看详情"
-                   target="_blank">
-                            <img src="{dede:global.cfg_templets_skin/}/images/common/more01.gif"
-                                 alt="查看详情"/></a></span>
-        </dd>
-      </dl>
-
-      <dl class='jzl1'>
-        <dt><a href="#" title="东南电工服务周到，解决我们后顾之忧"
-               target="_blank">
-          <img
-              src="{dede:global.cfg_templets_skin/}/images/20141230092506_26671.jpg"
-              alt="东南电工服务周到，解决我们后顾之忧"
-              title="东南电工服务周到，解决我们后顾之忧"/></a></dt>
-        <dd>
-          <h3>
-            <a href="#" title="东南电工服务周到，解决我们后顾之忧"
-               target="_blank">
-              东南电工服务周到，解决我们后顾之忧
+          <span>
+            <a href="[field:arcurl /]" title="查看详情" target="_blank">
+              <img src="[field:global.cfg_templets_skin/]/images/common/more01.gif" alt="查看详情"/>
             </a>
-          </h3>
-          <p>
-            电力工程在我们公司是比较重视的一块，但是我们一直没有专业的人...
-          </p>
-          <span><a href="#" title="查看详情"
-                   target="_blank">
-                            <img src="{dede:global.cfg_templets_skin/}/images/common/more01.gif"
-                                 alt="查看详情"/></a></span>
+          </span>
         </dd>
       </dl>
-
-      <dl>
-        <dt><a href="#" title="电力工程安装，就选东南电工！"
-               target="_blank">
-          <img
-              src="{dede:global.cfg_templets_skin/}/images/20141230091659_55847.jpg"
-              alt="电力工程安装，就选东南电工！"
-              title="电力工程安装，就选东南电工！"/></a></dt>
-        <dd>
-          <h3>
-            <a href="#" title="电力工程安装，就选东南电工！"
-               target="_blank">
-              电力工程安装，就选东南电工！
-            </a>
-          </h3>
-          <p>
-            一直想找一家专业的电力工程公司来为我们新开发的楼盘来做电力设...
-          </p>
-          <span><a href="#" title="查看详情"
-                   target="_blank">
-                            <img src="{dede:global.cfg_templets_skin/}/images/common/more01.gif"
-                                 alt="查看详情"/></a></span>
-        </dd>
-      </dl>
-
+      {/dede:arclist}
     </div>
+    <script type="text/javascript">
+      $('div.jz_c>dl').each(function (index, item) {
+        if (index == 1) {
+          $(item).addClass("jzl1");
+        }
+      });
+    </script>
   </div>
-
-
 </div>
+
 <div class="h_gg pr">
-  <a href="javascript:;" class="h_gg02"></a><span class="gg01 pa">全国咨询电话<b>020-85552011</b><a
-    href="http://wpa.qq.com/msgrd?v=3&site=广东东南输变电工程有限公司&menu=yes&uin=1037515501" target="_blank"
-    title="立即咨询">立即咨询</a></span>
+  <a href="javascript:;" class="h_gg02"></a>
+  <span class="gg01 pa">全国咨询电话<b>{dede:global.cfg_phone/}</b>
+      <a href="http://wpa.qq.com/msgrd?v=3&site={dede:global.cfg_companyname/}&menu=yes&uin=1037515501"
+         target="_blank" title="立即咨询">立即咨询</a>
+    </span>
 </div>
+
 <div class="content">
   <!--广东东南输变电工程有限公司-->
 

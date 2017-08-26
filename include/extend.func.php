@@ -117,7 +117,7 @@ HTML;
             $id = $row['id'];
             $image = $row['litpic'];
             $title = $row['title'];
-            $arcurl =  GetOneArchive($id)['arcurl'];
+            $arcurl = GetOneArchive($id)['arcurl'];
             $temp = "<li><a href=\"$arcurl\" title=\"$title\"><img src=\"$image\" alt=\"$title\" title=\"$title\"/></a></li>";
             $aTag .= $temp;
         }
@@ -152,4 +152,28 @@ HTML;
         }
     }
     return $output;
+}
+
+
+// 合作伙伴的图片
+function getImagesTypeId($typeid)
+{
+    global $dsql;
+    $output = '';
+
+    $dsql->SetQuery("SELECT id, litpic, title FROM #@__archives where typeid=$typeid");
+    $dsql->Execute();
+
+    $liTag = '';
+    while ($row = $dsql->GetArray()) {
+        $id = $row['id'];
+        $image = $row['litpic'];
+        $title = $row['title'];
+        if (!empty($image)) {
+            $arcurl = GetOneArchive($id)['arcurl'];
+            $temp = "<li><a href=\"$arcurl\" title=\"$title\"><img src=\"$image\" alt=\"$title\" title=\"$title\"/></a></li>";
+            $liTag .= $temp;
+        }
+    }
+    return $liTag;
 }

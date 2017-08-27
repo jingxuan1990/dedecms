@@ -1,0 +1,1 @@
+INSERT INTO `dede_homepageset` VALUES('dongnan/index.htm','../index.html','1');

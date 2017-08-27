@@ -1,0 +1,6 @@
+INSERT INTO `dede_member_flink` VALUES('1','2','织梦内容管理系统','http://www.dedecms.com');
+INSERT INTO `dede_member_flink` VALUES('2','3','织梦内容管理系统','http://www.dedecms.com');
+INSERT INTO `dede_member_flink` VALUES('3','4','织梦内容管理系统','http://www.dedecms.com');
+INSERT INTO `dede_member_flink` VALUES('4','5','织梦内容管理系统','http://www.dedecms.com');
+INSERT INTO `dede_member_flink` VALUES('5','6','织梦内容管理系统','http://www.dedecms.com');
+INSERT INTO `dede_member_flink` VALUES('6','7','织梦内容管理系统','http://www.dedecms.com');

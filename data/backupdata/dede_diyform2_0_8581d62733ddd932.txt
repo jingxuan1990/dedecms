@@ -1,0 +1,1 @@
+INSERT INTO `dede_diyform2` VALUES('1','0','liewl1','1231231','13712348762');

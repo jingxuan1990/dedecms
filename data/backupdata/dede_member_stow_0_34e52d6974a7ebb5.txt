@@ -1,0 +1,2 @@
+INSERT INTO `dede_member_stow` VALUES('1','4','106','{dede:招聘启事 标题=\'织梦大家庭新年招募第一波\'}','1270775903','');
+INSERT INTO `dede_member_stow` VALUES('2','4','39','Web2.0十大Ajax安全漏洞以及成因','1270775921','');

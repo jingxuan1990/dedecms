@@ -1,0 +1,3 @@
+INSERT INTO `dede_member_msg` VALUES('1','1','admin','127.0.0.1','1','1270775620','<img src=\'/member/templets/images/smiley/6.gif\' style=\'cursor: pointer; position: relative;\'>天气和心情都非常不错!');
+INSERT INTO `dede_member_msg` VALUES('2','6','沙羡','127.0.0.1','1','1270775668','登录dedecms中!...<img src=\'/member/templets/images/smiley/7.gif\' style=\'cursor: pointer; position: relative;\'>');
+INSERT INTO `dede_member_msg` VALUES('3','4','like','127.0.0.1','1','1270775738','webdesign<img src=\'/member/templets/images/smiley/1.gif\' style=\'cursor: pointer; position: relative;\'>');

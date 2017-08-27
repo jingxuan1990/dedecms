@@ -159,7 +159,6 @@ HTML;
 function getImagesTypeId($typeid)
 {
     global $dsql;
-    $output = '';
 
     $dsql->SetQuery("SELECT id, litpic, title FROM #@__archives where typeid=$typeid");
     $dsql->Execute();
@@ -190,4 +189,27 @@ function getImgAndTitleByDocId($docId)
     $output = "<p style=\"text-align: center\"><img src=\"$image\" border=\"0\" width=\"600\" height=\"450\" alt=\"$title\"></p>";
     $output .= "<p style=\"text-align: center;\">$title</p>";
     return $output;
+}
+
+
+// 获取公司相册的展示列表
+function getCompanyImages($typeid)
+{
+    global $dsql;
+
+    $dsql->SetQuery("SELECT id, litpic, title FROM #@__archives where typeid=$typeid");
+    $dsql->Execute();
+
+    $liTags = '';
+    while ($row = $dsql->GetArray()) {
+        $id = $row['id'];
+        $image = $row['litpic'];
+        $title = $row['title'];
+        if (!empty($image)) {
+            $arcurl = GetOneArchive($id)['arcurl'];
+            $liTag = "<li><a href=\"$arcurl\" title=\"$title\" target=\"_blank\"><img src=\"$image\" alt=\"$title\" title=\"$title\"/></a><span><a href=\"$arcurl\" title=\"$title\" target=\"_blank\">$title</a></span></li>";
+            $liTags .= $liTag;
+        }
+    }
+    return $liTags;
 }

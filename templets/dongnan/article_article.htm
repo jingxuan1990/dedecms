@@ -3,6 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   {dede:include filename="meta.htm"/}
+  <script type="text/javascript">
+    var SKIN_PATH = "{dede:global.cfg_templets_skin/}/";
+    var CMS_PATH = "{dede:global.cfg_cmsurl/}/";
+  </script>
   <script src="{dede:global.cfg_templets_skin/}/js/MobileRewrite.js"
           type="text/javascript"></script>
   <script type="text/javascript">uaredirect("/Mobile/MProducts/dqgc_1_page1.html");</script>
@@ -11,10 +15,6 @@
   <link href="{dede:global.cfg_templets_skin/}/style/Style.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript"
           src="{dede:global.cfg_templets_skin/}/js//NSW_DetailsPro.js"></script>
-  <script type="text/javascript">
-    var SKIN_PATH = "{dede:global.cfg_templets_skin/}/";
-    var CMS_PATH = "{dede:global.cfg_cmsurl/}/";
-  </script>
 </head>
 <body>
 
@@ -28,39 +28,40 @@
 
 <script type="text/javascript">
   //    heaernavcs();
-  initCommonHeader();
+//  initCommonHeader();
   var MARK = "product";
   if (MARK == "") {
     MARK = "index";
   }
-  //    initCommonHeaderKeywords(MARK);
+//      initCommonHeaderKeywords(MARK);
 </script>
 
 <script language="javascript" type="text/javascript">
   //产品标题
-  var OBJ_TITLE = "电气工程";
-  //视频关键词
-  var VIDEO_KEY = "";
-  //权限ID
-  var AUTHORITY_ID = "";
-  //图片路径数组
-  var ARR_IMG_PATH = [];
-  var ColumnID = 5;
-  var ProductID = 58;
-  var PColumnID = "4";
-  var ColumnName = "电气工程";
-  var HitLayer = "ProductHits";
-  var Hits = 200;
-  var MARK = "product";
-  var ARR_AD_MARK = ["product_detail_1"];
-//  var SID = "0001,0004,0005";
-  var atts = "";
+//  var OBJ_TITLE = "电气工程";
+//  //视频关键词
+//  var VIDEO_KEY = "";
+//  //权限ID
+//  var AUTHORITY_ID = "";
+//  //图片路径数组
+//  var ARR_IMG_PATH = [];
+//  var ColumnID = 5;
+//  var ProductID = 58;
+//  var PColumnID = "4";
+//  var ColumnName = "电气工程";
+//  var HitLayer = "ProductHits";
+//  var Hits = 200;
+//  var MARK = "product";
+//  var ARR_AD_MARK = ["product_detail_1"];
+//  //  var SID = "0001,0004,0005";
+//  var atts = "";
 </script>
 
 <!--content:start-->
 <div class="topadcs">
   {dede:myad name='lanmu2'/}
 </div>
+
 <div class="content">
   <div class="rightl">
     <div class="pro_curmbs">
@@ -84,9 +85,7 @@
             <ul></ul>
             <div class="clear"></div>
           </div>
-          {dede:arclist channelid='1' titlelen='20' row='3' addfields='body'}
-            [field:body /]
-          {/dede:arclist}
+          {dede:field.id function='getContentByDocId(@me)'/}
           <div class="clear">
           </div>
           <p style="text-indent: 2em; text-align: left; font-weight:bold; color:#2ca5ea">
@@ -114,16 +113,14 @@
           <div class="cptab">
             <a href="javascript:void(0)" onmouseover="switchProdTab(this)"
                target_id="cptab_relevant"
-               class="cr">此类型相关业务
-            </a>
+               class="cr">此类型相关业务</a>
             <div class="clear">
             </div>
           </div>
           <div>
             <div>
               <!-- 随机获取相关业务文档 -->
-              {dede:arclist orderby='rand' titlelen='10' row='3' type='image.' imgwidth='168'
-              imgheight='97'}
+              {dede:arclist orderby='rand' titlelen='10' row='3' type='image.' imgwidth='168' imgheight='97'}
               <dl>
                 <dt>
                   <a href="[field:arcurl /]" title="[field:title /]" target="_blank">
@@ -310,11 +307,12 @@
       <div class="nr">
         {dede:channelartlist typeid='25'}
         <h4 sid="0001,000{dede:field name='id'/}">
-          <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">{dede:field
-            name='typename'/}</a>
+          <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">
+            {dede:field name='typename'/}
+          </a>
         </h4>
         <ul>
-          {dede:arclist titlelen='10' row='5'}
+          {dede:arclist titlelen='50' row='5'}
           <li sid="0001,000[field:typeid runphp='yes' ]
             global $dsql;
             @typeid=@me
@@ -337,7 +335,7 @@
       var typeId = "{dede:type}[field:id /]{/dede:type}";
 
       SID = '0001,000' + typeId;
-      if(aid !== '') {
+      if (aid !== '') {
         SID = SID + ",000" + aid;
       }
       console.log("SID=" + SID);
@@ -348,7 +346,7 @@
     <div class="leib2 mt10">
       <div class="tit"><span>推荐业务</span></div>
       <div class="t05_con">
-        {dede:arclist typeid='16,17,18' flag='c' titlelen='10' row='6' type='image.' imgwidth='168'
+        {dede:arclist typeid='16,17,18' flag='c' titlelen='50' row='6' type='image.' imgwidth='168'
         imgheight='97'}
         <dl class="pd_t05_con_dl">
           <dt>
@@ -379,7 +377,7 @@
 </script>
 
 <script type="text/javascript" language="javascript">
-//  $(".nr h4[sid=" + SID + "] a").css({"color": "#1e4288", "font-weight": "bold"});
+  //  $(".nr h4[sid=" + SID + "] a").css({"color": "#1e4288", "font-weight": "bold"});
   // $(".nr ul li[sid=0001,0004,0005] a").css({ "color": "#1e4288", "font-weight": "bold" });
 </script>
 

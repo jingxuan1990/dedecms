@@ -213,3 +213,15 @@ function getCompanyImages($typeid)
     }
     return $liTags;
 }
+
+
+// 获取指定文档的title和arl显示在导航栏上
+function getNavUrlByDocId($aid)
+{
+    $row = GetOneArchive($aid);
+    $title = $row['arctitle'];
+    $arcUrl = $row['arcurl'];
+
+    $html = "<li><a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a></li>";
+    return $html;
+}

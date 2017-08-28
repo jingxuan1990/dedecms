@@ -21,7 +21,7 @@
 
 <script type="text/javascript">
   //    heaernavcs();
-  initCommonHeader();
+//  initCommonHeader();
   var MARK = "product";
   if (MARK == "") {
     MARK = "index";
@@ -80,7 +80,7 @@
       <h4 class="diysr">东南推荐资讯</h4>
       <div class="news_random">
         <ul>
-          {dede:arclist typeid='29' row='20' titlelen='30' orderby='rand'}
+          {dede:arclist typeid='29' row='20' titlelen='50' orderby='rand'}
           <li>
             <span class="fr">[field:pubdate function="MyDate('m-d',@me)"/]</span>
             <a target="_blank" href="[field:arcurl /]" title="[field:title /]">
@@ -114,7 +114,7 @@
           <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">{dede:field name='typename'/}</a>
         </h4>
         <ul>
-          {dede:arclist titlelen='10' row='5'}
+          {dede:arclist titlelen='50' row='5'}
           <li sid="0001,000[field:typeid runphp='yes' ]
             global $dsql;
             @typeid=@me

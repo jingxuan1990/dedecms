@@ -24,7 +24,6 @@
 {dede:include filename="head.htm"/}
 <!--头部结束-->
 
-
 <!--广告开始-->
 {dede:include filename="myad.htm"/}
 <!--广告结束-->
@@ -36,8 +35,10 @@
 <script type="text/javascript">
   //    heaernavcs();
   initCommonHeader();
-  //    var MARK = "index";
-  //    if (MARK == "") { MARK = "index"; }
+  var MARK = "index";
+  if (MARK == "") {
+    MARK = "index";
+  }
   //    initCommonHeaderKeywords(MARK);
 </script>
 
@@ -60,7 +61,7 @@
 </div>
 <div class="content">
   <div class="cpbox">
-    <!--东南业务分类-->
+    <!--业务分类-->
     <div class="dh fl">
       <h2>
         {dede:type typeid='25'}
@@ -124,8 +125,7 @@
       {dede:channelartlist typeid='16,17,18'}
       <div id="sb{dede:field name='typeid'/}" class="sbdiv">
         <div class="cp_c">
-          {dede:arclist flag='c' titlelen='20' infolen='70' row='2' type='image.'
-          imgwidth='339'imgheight='195'}
+          {dede:arclist flag='c' titlelen='20' infolen='70' row='2' type='image.' imgwidth='339'imgheight='195'}
           <dl>
             <dt>
               <a href="[field:arcurl /]" title="[field:title /]" target="_blank">
@@ -138,7 +138,7 @@
                   /]</a>
               </h3>
               <p>
-                [field:info /]...
+                [field:infos /]...
               </p>
               <span class="ico_gd">
                 <a href="http://wpa.qq.com/msgrd?v=3&site=[field:global.cfg_companyname/]&menu=yes&uin=1037515501"
@@ -166,17 +166,21 @@
 <div class="dy">
   <div class="dyc content">
     <h2>
-      <span>工程用电</span> 你还有很多担忧？<p>
-      <b>降低用电成本，完成节能指标</b> 还困扰着你？</p>
+      <!--<span>工程用电</span> 你还有很多担忧？<p>-->
+      <b>贵公司<span>电力配电测温</span>，</b> 安全吗？</p>
     </h2>
     <div class="dy_c">
       <ul>
-        <li>企业如何<b>降低用电成本解决高能耗问题？</b></li>
-        <li>企业如何完成国家<b>十二五计划</b>中的<b>节能指标？</b></li>
-        <li>新建商业<b>楼宇、酒店、工厂供配电系统如何规划？</b></li>
-        <li>新建商业楼宇、酒店、工厂供配电<b>工期如何保证？</b></li>
-        <li>新建商业楼宇、酒店、工厂供配电系统<b>投产运营后面临高额电费怎么办？</b></li>
-        <li>新建商业楼宇、酒店、工厂供配电方案<b>如何规划更省时省钱？</b></li>
+        <li><b>电力事故</b>无法及时发现？</li>
+        <li><b>人工巡检费时费力</b>不彻底？</li>
+        <li><b>高低压配电测温</b>不精准？</li>
+        <li><b>故障报警</b>无人知？</li>
+        <!--<li>企业如何<b>降低用电成本解决高能耗问题？</b></li>-->
+        <!--<li>企业如何完成国家<b>十二五计划</b>中的<b>节能指标？</b></li>-->
+        <!--<li>新建商业<b>楼宇、酒店、工厂供配电系统如何规划？</b></li>-->
+        <!--<li>新建商业楼宇、酒店、工厂供配电<b>工期如何保证？</b></li>-->
+        <!--<li>新建商业楼宇、酒店、工厂供配电系统<b>投产运营后面临高额电费怎么办？</b></li>-->
+        <!--<li>新建商业楼宇、酒店、工厂供配电方案<b>如何规划更省时省钱？</b></li>-->
       </ul>
       <span>
         <a href="http://wpa.qq.com/msgrd?v=3&site={dede:global.cfg_companyname/}&menu=yes&uin=1037515501"
@@ -190,9 +194,9 @@
     <div class="fj01">
       <h2>
         <p>
-          <span>东南电工</span>为您量身定制<b>最经济、节能的</b>用电解决方案
+          <span>泰恩科技</span>为您定制<b>最安全、最节能</b>的配电测温解决方案
         </p>
-        <em><span>15年专业</span>电力工程供配电专家</em>
+        <em><span>12年电力0事故，115家企业选择</span></em>
       </h2>
       <div class="fj_c">
         <dl>
@@ -204,8 +208,8 @@
             节能：选用合理容量、配置降损节能变压器、调整符合曲线、平衡三相电压</p>
           </dt>
           <dd>
-            精研细究，<br/>
-            设计最经济、节能的方案
+            实地调研 ，<br/>
+            研究最安全、最精细测温方案
           </dd>
         </dl>
         <dl class="fjl1">
@@ -215,8 +219,8 @@
             德国进口原装全套电气设备，经经验丰富的专业人员试验，检测，保证为客户提供最安全最节能的供配电系统</p>
           </dt>
           <dd>
-            预防性检测，<br/>
-            确保用电设备安全无故障
+            故障测试，<br/>
+            确保配电安全绝对安全
           </dd>
         </dl>
         <dl>
@@ -226,16 +230,16 @@
             专业的施工团队，现代化的施工设备，丰富的施工经验保证电力工程施工速度，确保快速完成工程送电</p>
           </dt>
           <dd>
-            专业施工团队，<br/>
-            快速完成工程送电
+            专业后期服务，<br/>
+            即时调试，确保业主即时需要
           </dd>
         </dl>
       </div>
     </div>
 
-    <!--东南电工方案中心-->
+    <!--方案中心-->
     {dede:include filename="index_solution_center.htm"/}
-    <!--东南电工方案中心-->
+    <!--方案中心-->
 
     <script type="text/javascript">
       $(function () {
@@ -294,9 +298,10 @@
 <!--电气设备安装及保养工程案例$$电气设备节能改造工程案例-->
 <div class="kh content">
   <h2>
-    东南电工已为<span>超过1900多家企业</span>
+    泰恩科技已经为<span>115家（含军工）企业</span>
     <p>
-      提供<b>最经济、节能</b>的电力工程服务
+      提供<b>最安全的电力配电测温</b>服务
+      <!--提供<b>最经济、节能</b>的电力工程服务-->
     </p>
   </h2>
   <ul class="cptils">

@@ -841,7 +841,7 @@ p {
   display: block;
   float: left;
   color: #fff;
-  background: url(../images/krtbg.jpg) no-repeat 0 0;
+  background: url(../images/common/krtbg.jpg) no-repeat 0 0;
   width: 405px;
   text-align: center;
 }
@@ -854,7 +854,7 @@ p {
 .dy_c li {
   height: 35px;
   line-height: 35px;
-  background: url(../images/ico04.png) no-repeat 3px 11px;
+  background: url(../images/common/ico04.png) no-repeat 3px 11px;
   padding: 0 0 0 36px;
 }
 
@@ -928,7 +928,7 @@ p {
 }
 
 .fj_c dt {
-  background: url(../images/dhbg.jpg) no-repeat center bottom;
+  background: url(../images/common/dhbg.jpg) no-repeat center bottom;
   height: 203px;
   padding: 0 0 11px;
 }

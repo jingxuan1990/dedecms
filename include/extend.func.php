@@ -225,3 +225,36 @@ function getNavUrlByDocId($aid)
     $html = "<li><a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a></li>";
     return $html;
 }
+
+// 获取关于我们的内容简介
+function getAboutUs($typeId)
+{
+    global $dsql;
+    $dsql->SetQuery("SELECT id, content FROM #@__arctype where id=$typeId");
+    $dsql->Execute();
+    $row = $dsql->GetOne();
+    $body = $row['content'];
+    return cn_substr(Html2text($body), 600);
+}
+
+// 获取栏目的名字
+function getTypeName($typeId)
+{
+    global $dsql;
+    $dsql->SetQuery("SELECT * FROM #@__arctype where id=$typeId");
+    $dsql->Execute();
+    $row = $dsql->GetOne();
+    $name = $row['typename'];
+    return $name;
+}
+
+// 获取栏目的名字
+function getTypeNameLink($typeId)
+{
+    global $dsql;
+    $dsql->SetQuery("SELECT * FROM #@__arctype where id=$typeId");
+    $dsql->Execute();
+    $row = $dsql->GetOne();
+    $name = $row['typename'];
+    return $name;
+}

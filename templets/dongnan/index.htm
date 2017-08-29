@@ -115,17 +115,17 @@
     <div class="cp fl">
       <ul class="cptil">
         <span class="more01 fr"><a href="/product/" title="更多">MORE +</a></span>
-        {dede:channel typeid='16,17,18' row='3' type='top'}
+        {dede:channel typeid='43,44,58' row='3'}
         <li class="sb cur" onmousemove="qieh(this)" _id="sb[field:id/]">
           <a href='[field:typeurl/]' title='[field:typename/]'>[field:typename/]</a>
         </li>
         {/dede:channel}
       </ul>
 
-      {dede:channelartlist typeid='16,17,18'}
+      {dede:channelartlist typeid='43,44,58'}
       <div id="sb{dede:field name='typeid'/}" class="sbdiv">
         <div class="cp_c">
-          {dede:arclist flag='c' titlelen='20' infolen='70' row='2' type='image.' imgwidth='339'imgheight='195'}
+          {dede:arclist flag='c' titlelen='50' infolen='70' row='2' type='image.' imgwidth='339'imgheight='195'}
           <dl>
             <dt>
               <a href="[field:arcurl /]" title="[field:title /]" target="_blank">
@@ -134,8 +134,8 @@
             </dt>
             <dd>
               <h3>
-                <a href="[field:arcurl /]" title="[field:title /]" target="_blank">[field:title
-                  /]</a>
+                <a href="[field:arcurl /]" title="[field:title /]" target="_blank">
+                  [field:title/]</a>
               </h3>
               <p>
                 [field:infos /]...

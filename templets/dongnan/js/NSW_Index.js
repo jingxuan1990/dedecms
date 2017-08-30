@@ -4188,7 +4188,7 @@ function xuanze() {
     $a("请输入关键词搜索");
     return;
   }
-  window.location.href = "/Search/Index.aspx?objtype=product&kwd=" + a
+  window.location.href = "/plus/search.php?searchtype='titlekeyword'&q=" + a
 }
 $(function () {
   $("div.menu li:first").addClass("cur");

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+  {dede:include filename="meta.htm"/}
+  <script type="text/javascript">
+    var SKIN_PATH = "{dede:global.cfg_templets_skin/}/";
+    var CMS_PATH = "{dede:global.cfg_cmsurl/}/";
+  </script>
+  <link href="{dede:global.cfg_templets_skin/}/style/resetcommon.css" rel="stylesheet"
+        type="text/css"/>
+  <link href="{dede:global.cfg_templets_skin/}/style/Style.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/NSW_JCIA.js"></script>
+</head>
+<body>
+<!--Header:Start-->
+
+<!--头部开始-->
+{dede:include filename="head.htm"/}
+<!--头部结束-->
+
+<!-- 关键字和搜索开始 -->
+{dede:include filename=search_input.htm"/}
+<!-- 关键字和搜索结束 -->
+
+<script type="text/javascript">
+  var MARK = "";
+  if (MARK == "") {
+    MARK = "index";
+  }
+</script>
+
+<!--Header:End-->
+<!--Content:Start-->
+<div class="topadcs">
+  <a href="/project/" title="东南电工——专业电力供配电专家，为您提供优质电力工程服务">
+    <img src="{dede:global.cfg_templets_skin/}/images/20141230111606_85703.jpg"
+         title="东南电工——专业电力供配电专家，为您提供优质电力工程服务"
+         alt="东南电工——专业电力供配电专家，为您提供优质电力工程服务"/></a>
+</div>
+
+<div class="content">
+  <div class="plc2">
+    <span>
+        <span>当前位置：</span>
+       {dede:field.position/}» 全站搜索 » 搜索：{dede:global name='keyword' function='RemoveXSS(@me)'/}
+    </span>
+  </div>
+
+  <div class="left2">
+    <div class="left2top">
+    </div>
+    <div class="left2_main">
+      <div class="search_con">
+        {dede:list perpage='10'  titlelen='50' infolen='500'}
+        <div class="l2tit" style="width: 95%;">
+          [<a target="_blank" href="[field:arcurl/]">[field:title/]</a>]
+          <a href="[field:arcurl/]" class="f14">
+            [field:title/]
+          </a>
+          <span class="f11">[[field:stime/]]</span>
+        </div>
+        <div class="clear">
+        </div>
+        <dl class="sear_dl">
+          <dt class="dt2">
+            <a href="[field:arcurl/]" title="[field:title/]">
+              [field:image/]
+            </a>
+          </dt>
+          <dd class="d2">
+            [field:description/]...
+            <a href="[field:arcurl/]" class="cRed" title="[field:title/]">[查看]</a>
+          </dd>
+          <dd>
+            <a href="[field:arcurl/]" class="a_d" title="[field:title/]">[field:arcurl/]</a>
+          </dd>
+        </dl>
+        {/dede:list}
+
+        <div class="rele_search">
+          <h5>
+            相关搜索
+          </h5>
+          <ul>
+            <li id="noRelevantSearch">{dede:likewords num='8'/}</li>
+          </ul>
+          <div class="clear">
+          </div>
+        </div>
+        <ul class="pagelist">
+          {dede:pagelist listsize='4'/}
+        </ul>
+      </div>
+    </div>
+    <div class="left2bot">
+    </div>
+  </div>
+
+  <div class="right2">
+    <div class="right2top">
+    </div>
+    <div class="right2_main">
+      <h4 class="t03">
+        {dede:type typeid='29'}
+        <a href="[field:typeurl/]" title="[field:typename/]">[field:typename/]</a>
+        {/dede:type}
+      </h4>
+      <ul class="n_rt_ul2">
+
+        {dede:arclist typeid='29' titlelen='50' row='50' orderby='pubdate'}
+        <li>
+          <img src="[field:global.cfg_templets_skin/]/images/common/sico15.gif" alt="[field:title /]" title="[field:title /]"/>
+          <a href="[field:arcurl /]" title="[field:title /]">
+            [field:title /]
+          </a>
+        </li>
+        {/dede:arclist}
+
+      </ul>
+    </div>
+    <div class="left2bot">
+    </div>
+  </div>
+  <div class="clear">
+  </div>
+</div>
+<!--Content:End-->
+<!--Footer:Start-->
+
+<!--底部开始-->
+{dede:include filename="footer.htm"/}
+<!--底部结束-->
+
+<!-- 百度分享 -->
+{dede:include filename="baidu_share.htm"/}
+</body>
+</html>

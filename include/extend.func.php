@@ -258,14 +258,3 @@ function getTypeNameByTypeId($typeId)
     $name = $row['typename'];
     return $name;
 }
-
-// 获取栏目的名字
-function getTypeNameLink($typeId)
-{
-    global $dsql;
-    $dsql->SetQuery("SELECT * FROM #@__arctype where id=$typeId");
-    $dsql->Execute();
-    $row = $dsql->GetOne();
-    $name = $row['typename'];
-    return $name;
-}

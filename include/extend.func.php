@@ -226,6 +226,17 @@ function getNavUrlByDocId($aid)
     return $html;
 }
 
+// 获取指定文档的title和arl显示在导航栏上(仅仅获得a标签)
+function getANavUrlByDocId($aid)
+{
+    $row = GetOneArchive($aid);
+    $title = $row['arctitle'];
+    $arcUrl = $row['arcurl'];
+
+    $html = "<a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a>";
+    return $html;
+}
+
 // 获取关于我们的内容简介
 function getAboutUs($typeId)
 {

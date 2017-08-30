@@ -2,26 +2,37 @@
   <div class="footer">
     <div class="f_nav">
       <a href="{dede:global.cfg_indexurl/}" title="{dede:global.cfg_indexname/}" class="born">{dede:global.cfg_indexname/}</a>
-      {dede:channel typeid='16,17,19,20,21' type='top' row='5'}
-        <a href="[field:typeurl/]" title="[field:typename/]">[field:typename/]</a>
-      {/dede:channel}
+      {dede:field.typeid function='getANavUrlByDocId(157)'/}
+      {dede:field.typeid function='getANavUrlByDocId(158)'/}
+      {dede:field.typeid function='getANavUrlByDocId(159)'/}
+
+      {dede:type typeid='32'}
+      <a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a>
+      {/dede:type}
+
+      {dede:type typeid='38'}
+      <a href="[field:typeurl/]" title="客户服务"><span>客户服务</span></a>
+      {/dede:type}
+
       <a href="{dede:global.cfg_cmsurl/}/data/sitemap.html" target="_blank" title="网站地图">网站地图</a>
     </div>
 
     <div class="f_con">
       <div class="f_logo fl">
         <a href="/" title="{dede:global.cfg_companyname/}">
-          <img src="{dede:global.cfg_templets_skin/}/images/f_logo.jpg" alt="{dede:global.cfg_companyname/}" title="{dede:global.cfg_companyname/}"/></a>
+          <img src="{dede:global.cfg_logo/}" alt="{dede:global.cfg_companyname/}"
+               title="{dede:global.cfg_companyname/}"/></a>
       </div>
       <div class="f_text fl">
         {dede:global.cfg_powerby/}
         <a href="http://www.miitbeian.gov.cn/" title="备案号：{dede:global.cfg_beian/}" target="_blank">备案号：{dede:global.cfg_beian/}</a><br/>
-        电话：{dede:global.cfg_phone/}
-        传真：{dede:global.cfg_fax/}<br/>
-        QQ：{dede:global.cfg_qq/}
+        电话：{dede:global.cfg_phone/} 传真：{dede:global.cfg_fax/}<br/>
+        手机号：{dede:global.cfg_telphone/}<br/>
+        QQ：{dede:global.cfg_qq/}<br/>
         EMAIL： <a href="mailto:{dede:global.cfg_email/}" title="{dede:global.cfg_email/}">
         {dede:global.cfg_email/}</a><br/>
         地址：{dede:global.cfg_companyaddr/}<br/>
+
         <script>
           var _hmt = _hmt || [];
           (function () {
@@ -32,9 +43,13 @@
           })();
         </script>
       </div>
+
       <div class="f_ewm fl">
         <a href="javascript:;">
-          <img src="{dede:global.cfg_templets_skin/}/images/f_ewm.jpg" alt="二维码"/></a></div>
+          <img src="{dede:global.cfg_templets_skin/}/images/f_ewm.png"
+               style="width: 83px; height: 83px" alt="二维码"/>
+        </a>
+      </div>
     </div>
   </div>
 </div>

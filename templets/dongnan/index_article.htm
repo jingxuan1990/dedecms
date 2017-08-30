@@ -53,7 +53,7 @@
     </div>
 
     <div class="pro_main">
-      {dede:arclist typeid='25' row='20' orderby='pubdate' type='image.' imgwidth='223' imgheight='132'}
+      {dede:arclist typeid='66' row='20' orderby='pubdate' type='image.' imgwidth='223' imgheight='132'}
       <dl class="pd_index_dl">
         <dt>
           <a target="_blank" href="[field:arcurl/]" title="[field:title/]">
@@ -106,14 +106,14 @@
 
       <div class="tit" style=" margin-top:10px;">
         <span>
-          {dede:type typeid='25'}
+          {dede:type typeid='66'}
             [field:typename/]
           {/dede:type}
         </span>
       </div>
 
       <div class="nr">
-        {dede:channelartlist typeid='25'}
+        {dede:channelartlist typeid='66'}
         <h4 sid="0001,000{dede:field name='id'/}">
           <a href="{dede:field.typeurl/}" title="{dede:field.typename/}">{dede:field.typename/}</a>
         </h4>
@@ -146,6 +146,14 @@
       }
       console.log("SID=" + SID);
       productSelectCurrentPosition();
+    </script>
+
+    <script type="text/javascript" language="javascript">
+      // 根据aid选择导航栏
+      $(function () {
+        $("div.menu>ul>li").removeClass("cur");
+        $("div.menu>ul>li[aid='" + aid + "']").addClass("cur");
+      });
     </script>
 
     <!-- 新闻中心开始-->

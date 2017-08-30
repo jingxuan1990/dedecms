@@ -27,34 +27,34 @@
 <!-- 关键字和搜索结束 -->
 
 <script type="text/javascript">
-  //    heaernavcs();
-//  initCommonHeader();
+  //      heaernavcs();
+  //  initCommonHeader();
   var MARK = "product";
   if (MARK == "") {
     MARK = "index";
   }
-//      initCommonHeaderKeywords(MARK);
+  //      initCommonHeaderKeywords(MARK);
 </script>
 
 <script language="javascript" type="text/javascript">
   //产品标题
-//  var OBJ_TITLE = "电气工程";
-//  //视频关键词
-//  var VIDEO_KEY = "";
-//  //权限ID
-//  var AUTHORITY_ID = "";
-//  //图片路径数组
-//  var ARR_IMG_PATH = [];
-//  var ColumnID = 5;
-//  var ProductID = 58;
-//  var PColumnID = "4";
-//  var ColumnName = "电气工程";
-//  var HitLayer = "ProductHits";
-//  var Hits = 200;
-//  var MARK = "product";
-//  var ARR_AD_MARK = ["product_detail_1"];
-//  //  var SID = "0001,0004,0005";
-//  var atts = "";
+  //  var OBJ_TITLE = "电气工程";
+  //  //视频关键词
+  //  var VIDEO_KEY = "";
+  //  //权限ID
+  //  var AUTHORITY_ID = "";
+  //  //图片路径数组
+  //  var ARR_IMG_PATH = [];
+  //  var ColumnID = 5;
+  //  var ProductID = 58;
+  //  var PColumnID = "4";
+  //  var ColumnName = "电气工程";
+  //  var HitLayer = "ProductHits";
+  //  var Hits = 200;
+  //  var MARK = "product";
+  //  var ARR_AD_MARK = ["product_detail_1"];
+  //  //  var SID = "0001,0004,0005";
+  //  var atts = "";
 </script>
 
 <!--content:start-->
@@ -120,7 +120,8 @@
           <div>
             <div>
               <!-- 随机获取相关业务文档 -->
-              {dede:arclist orderby='rand' titlelen='10' row='3' type='image.' imgwidth='168' imgheight='97'}
+              {dede:arclist orderby='rand' titlelen='10' row='3' type='image.' imgwidth='168'
+              imgheight='97'}
               <dl>
                 <dt>
                   <a href="[field:arcurl /]" title="[field:title /]" target="_blank">
@@ -233,62 +234,6 @@
           </tr>
         </table>
       </div>
-      <!--  <div class="ad3" id="cntrAd_0">
-      </div>-->
-
-      <!--<div class="comments">-->
-      <!--<h4>-->
-      <!--共有<span id="spCommentCount">-</span>条评论<a href="#aPostComment">【我要评论】</a></h4>-->
-      <!--<div id="divComments" class="ml10 mt10">-->
-      <!--<img src="/Skins/default/Img/processing_2.gif" alt="正在加载..."/></div>-->
-      <!--<div class="info_pl">-->
-      <!--<a target="_blank" href="#">-->
-      <!--查看全部评论</a></div>-->
-      <!--</div>-->
-      <!--<div class="info_fb">-->
-      <!--<table width="100%" border="0" id="tbCmt">-->
-      <!--<tr>-->
-      <!--<td width="12%" class="td_b tr">-->
-      <!--我要评论:-->
-      <!--</td>-->
-      <!--<td width="88%">-->
-      <!--&nbsp;-->
-      <!--</td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-      <!--<td class="tr vat">-->
-      <!--<span class="red_x">*</span> 内 容：-->
-      <!--</td>-->
-      <!--<td>-->
-      <!--<textarea id="txtCmtContent" cols="80" rows="5"></textarea><br>-->
-      <!--（内容最多500个汉字，1000个字符）-->
-      <!--</td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-      <!--<td class="tr vat">-->
-      <!--验证码：-->
-      <!--</td>-->
-      <!--<td>-->
-      <!--&lt;!&ndash;<input type="text" size="30" id="txtCmtVerCode"&ndash;&gt;-->
-      <!--&lt;!&ndash;onfocus="showVerifyCode('spCmtVerCode','spCmtVerCodeMsg','imgCmtVerCode','spCmtChgVerCode')"/>&ndash;&gt;-->
-      <!--&lt;!&ndash;<cite><span id="spCmtVerCode"></span><span id="spCmtVerCodeMsg" class="hd"></span><a&ndash;&gt;-->
-      <!--&lt;!&ndash;id="spCmtChgVerCode" class="p hd" href="###"&ndash;&gt;-->
-      <!--&lt;!&ndash;onclick="changeVerCode('imgCmtVerCode','spCmtVerCodeMsg')">&ndash;&gt;-->
-      <!--&lt;!&ndash;看不清？！</a></cite>&ndash;&gt;-->
-      <!--</td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-      <!--<td>-->
-      <!--&nbsp;-->
-      <!--</td>-->
-      <!--<td>-->
-      <!--<input type="button" class="b13" value="发 表"-->
-      <!--onclick="postComment(this,58,'product')"/>-->
-      <!--<input type="button" onclick="emptyText('tbCmt')" class="b13" value="重 填"/>-->
-      <!--</td>-->
-      <!--</tr>-->
-      <!--</table>-->
-      <!--</div>-->
     </div>
     <div class="rightbot">
     </div>
@@ -298,14 +243,14 @@
     <div class="leib2">
       <div class="tit" style=" margin-top:10px;">
         <span>
-          {dede:type typeid='25'}
+          {dede:type typeid='66'}
             [field:typename/]
           {/dede:type}
         </span>
       </div>
 
       <div class="nr">
-        {dede:channelartlist typeid='25'}
+        {dede:channelartlist typeid='66'}
         <h4 sid="0001,000{dede:field name='id'/}">
           <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">
             {dede:field name='typename'/}
@@ -338,7 +283,9 @@
       if (aid !== '') {
         SID = SID + ",000" + aid;
       }
+
       console.log("SID=" + SID);
+
       productSelectCurrentPosition();
     </script>
 
@@ -377,8 +324,11 @@
 </script>
 
 <script type="text/javascript" language="javascript">
-  //  $(".nr h4[sid=" + SID + "] a").css({"color": "#1e4288", "font-weight": "bold"});
-  // $(".nr ul li[sid=0001,0004,0005] a").css({ "color": "#1e4288", "font-weight": "bold" });
+  // 根据aid选择导航栏
+  $(function () {
+    $("div.menu>ul>li").removeClass("cur");
+    $("div.menu>ul>li[aid='" + aid + "']").addClass("cur");
+  });
 </script>
 
 <!--底部开始-->

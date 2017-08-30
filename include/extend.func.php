@@ -222,7 +222,7 @@ function getNavUrlByDocId($aid)
     $title = $row['arctitle'];
     $arcUrl = $row['arcurl'];
 
-    $html = "<li><a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a></li>";
+    $html = "<li aid=\"$aid\"><a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a></li>";
     return $html;
 }
 

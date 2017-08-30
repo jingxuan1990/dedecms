@@ -238,7 +238,7 @@ function getAboutUs($typeId)
 }
 
 // 获取栏目的名字
-function getTypeName($typeId)
+function getTypeNameByTypeId($typeId)
 {
     global $dsql;
     $dsql->SetQuery("SELECT * FROM #@__arctype where id=$typeId");

@@ -741,5 +741,23 @@
 {dede:include filename="footer.htm"/}
 <!--底部结束-->
 
+
 <!-- 百度分享 -->
 {dede:include filename="baidu_share.htm"/}
+
+<script type="text/javascript">
+  $(function () {
+    $(".fj_c dl dt").hover(function () {
+      $(this).addClass("cur");
+    }, function () {
+      $(this).removeClass("cur");
+    })
+    $(".jy03 li").hover(function () {
+      $(this).addClass("cur");
+    }, function () {
+      $(this).removeClass("cur");
+    })
+  })
+</script>
+</body>
+</html>

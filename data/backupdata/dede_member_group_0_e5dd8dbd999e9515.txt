@@ -1,1 +1,0 @@
-INSERT INTO `dede_member_group` VALUES('1','朋友','0');

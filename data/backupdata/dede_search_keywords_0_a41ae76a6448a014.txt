@@ -1,6 +1,0 @@
-INSERT INTO `dede_search_keywords` VALUES('1','电力','电力','17','0','1503054262','0','0');
-INSERT INTO `dede_search_keywords` VALUES('2','测试内容','测试内容 内容 测试','3','1','1503404696','0','0');
-INSERT INTO `dede_search_keywords` VALUES('3','不错哦','不错哦 不错','1','0','1503209259','0','0');
-INSERT INTO `dede_search_keywords` VALUES('4','测试tag','测试tag 测试','1','0','1503209269','0','0');
-INSERT INTO `dede_search_keywords` VALUES('5','动态','动态','1','0','1503574615','0','0');
-INSERT INTO `dede_search_keywords` VALUES('6','文章','文章','2','0','1503575461','0','0');

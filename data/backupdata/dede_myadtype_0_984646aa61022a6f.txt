@@ -1,3 +1,0 @@
-INSERT INTO `dede_myadtype` VALUES('1','首页flash');
-INSERT INTO `dede_myadtype` VALUES('3','关键字下面广告');
-INSERT INTO `dede_myadtype` VALUES('4','主栏目下的图片');

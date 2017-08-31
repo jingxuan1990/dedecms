@@ -30,9 +30,29 @@
           </a>
         </li>
 
-        {dede:field.typeid function='getNavUrlByDocId(157)'/}
-        {dede:field.typeid function='getNavUrlByDocId(158)'/}
-        {dede:field.typeid function='getNavUrlByDocId(159)'/}
+        {dede:php}
+        $row = GetOneArchive(157);
+        $title = $row['arctitle'];
+        $arcUrl = $row['arcurl'];
+        echo  "<li sid='0001,000157'><a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a></li>";
+        {/dede:php}
+
+
+        {dede:php}
+        $row = GetOneArchive(158);
+        $title = $row['arctitle'];
+        $arcUrl = $row['arcurl'];
+        echo  "<li sid='0001,000158'><a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a></li>";
+        {/dede:php}
+
+
+        {dede:php}
+        $row = GetOneArchive(159);
+        $title = $row['arctitle'];
+        $arcUrl = $row['arcurl'];
+        echo  "<li sid='0001,000159'><a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a></li>";
+        {/dede:php}
+
 
         {dede:type typeid='32'}
         <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a></li>

@@ -15,6 +15,10 @@ require_once(DEDEINC . "/taglib/hotwords.lib.php");
 require_once(DEDEINC . "/taglib/channel.lib.php");
 require_once(DEDEINC . "/taglib/arclist.lib.php");
 require_once(DEDEINC . "/taglib/type.lib.php");
+require_once(DEDEINC . "/taglib/channelartlist.lib.php");
+require_once(DEDEINC . "/taglib/myad.lib.php");
+require_once(DEDEINC . "/taglib/php.lib.php");
+require_once(DEDEINC . "/taglib/sql.lib.php");
 
 @set_time_limit(0);
 @ini_set('memory_limit', '512M');
@@ -493,7 +497,16 @@ class SearchView
                 $this->dtp->Assign($tagid, lib_arclist($ctag, $this));
             } else if ($tagname == 'type') {
                 $this->dtp->Assign($tagid, lib_type($ctag, $this));
+            } else if ($tagname == "channelartlist") {
+                $this->dtp->Assign($tagid, lib_channelartlist($ctag, $this));
+            } else if ($tagname == "myad") {
+                $this->dtp->Assign($tagid, lib_myad($ctag, $this));
+            } else if ($tagname == "php") {
+                $this->dtp->Assign($tagid, lib_php($ctag, $this));
+            } else if ($tagname == "sql") {
+                $this->dtp->Assign($tagid, lib_sql($ctag, $this));
             }
+
             //End if
 
         }

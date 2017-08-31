@@ -2,9 +2,29 @@
   <div class="footer">
     <div class="f_nav">
       <a href="{dede:global.cfg_indexurl/}" title="{dede:global.cfg_indexname/}" class="born">{dede:global.cfg_indexname/}</a>
-      {dede:field.typeid function='getANavUrlByDocId(157)'/}
-      {dede:field.typeid function='getANavUrlByDocId(158)'/}
-      {dede:field.typeid function='getANavUrlByDocId(159)'/}
+
+      {dede:php}
+      $row = GetOneArchive(157);
+      $title = $row['arctitle'];
+      $arcUrl = $row['arcurl'];
+      echo  "<a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a>";
+      {/dede:php}
+
+
+      {dede:php}
+      $row = GetOneArchive(158);
+      $title = $row['arctitle'];
+      $arcUrl = $row['arcurl'];
+      echo  "<a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a>";
+      {/dede:php}
+
+
+      {dede:php}
+      $row = GetOneArchive(159);
+      $title = $row['arctitle'];
+      $arcUrl = $row['arcurl'];
+      echo  "<a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a>";
+      {/dede:php}
 
       {dede:type typeid='32'}
       <a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a>

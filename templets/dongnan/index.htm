@@ -180,7 +180,7 @@
         <li><b>故障报警</b>无人知？</li>
       </ul>
       <span>
-        <a href="http://wpa.qq.com/msgrd?v=3&site={dede:global.cfg_companyname/}&menu=yes&uin=1037515501"
+        <a href="http://wpa.qq.com/msgrd?v=3&site={dede:global.cfg_companyname/}&menu=yes&uin={dede:global.cfg_qq/}"
            target="_blank" title="立即咨询">立即咨询</a>
       </span>
     </div>
@@ -193,12 +193,12 @@
         <p>
           <span>泰恩科技</span>为您定制<b>最安全、最节能</b>的配电测温解决方案
         </p>
-        <em><span>12年电力0事故，115家企业选择</span></em>
+        <em><span><b id="age"><i>12 </i></b>年电力0事故，115家企业选择</span></em>
       </h2>
       <div class="fj_c">
         <dl>
           <dt>
-            <img src="{dede:global.cfg_templets_skin/}/images/fa_pic01.jpg"
+            <img src="{dede:global.cfg_templets_skin/}/images/fa_pic01.png"
                  alt="{dede:global.cfg_companyname/}"/>
           <p>
             经济：在符合送电标准的条件下，规划使用最小的空间承载最大容量的设备配置<br/>
@@ -211,7 +211,7 @@
         </dl>
         <dl class="fjl1">
           <dt>
-            <img src="{dede:global.cfg_templets_skin/}/images/fa_pic02.jpg" alt="东南电工"/>
+            <img src="{dede:global.cfg_templets_skin/}/images/fa_pic02.jpg" alt="泰恩科技"/>
           <p>
             德国进口原装全套电气设备，经经验丰富的专业人员试验，检测，保证为客户提供最安全最节能的供配电系统</p>
           </dt>
@@ -222,7 +222,7 @@
         </dl>
         <dl>
           <dt>
-            <img src="{dede:global.cfg_templets_skin/}/images/fa_pic03.jpg" alt="东南电工"/>
+            <img src="{dede:global.cfg_templets_skin/}/images/fa_pic03.png" alt="泰恩科技"/>
           <p>
             专业的施工团队，现代化的施工设备，丰富的施工经验保证电力工程施工速度，确保快速完成工程送电</p>
           </dt>
@@ -297,8 +297,7 @@
   <h2>
     泰恩科技已经为<span>115家（含军工）企业</span>
     <p>
-      提供<b>最安全的电力配电测温</b>服务
-      <!--提供<b>最经济、节能</b>的电力工程服务-->
+      提供<span>最安全的电力配电测温</span>服务
     </p>
   </h2>
   <ul class="cptils">
@@ -316,6 +315,12 @@
 
     {dede:type typeid='46'}
     <li class="gcal" onmousemove="qiehuan(this)" _id="gc2">
+      <a href="[field:typelink/]" title="[field:typename/]">[field:typename/]</a>
+    </li>
+    {/dede:type}
+
+    {dede:type typeid='81'}
+    <li class="gcal" onmousemove="qiehuan(this)" _id="gc3">
       <a href="[field:typelink/]" title="[field:typename/]">[field:typename/]</a>
     </li>
     {/dede:type}
@@ -382,6 +387,44 @@
       ads.scrollContId = "ScollName1cc"; // 内容容器ID""
       ads.arrLeftId = "LeftID1cc"; //左箭头ID
       ads.arrRightId = "RightID1cc"; //右箭头ID
+
+      ads.frameWidth = 932; //显示框宽度
+
+      ads.pageWidth = 932; //翻页宽度
+
+      ads.speed = 10; //移动速度(单位毫秒，越小越快)
+      ads.space = 50; //每次移动像素(单位px，越大越快)
+      ads.autoPlay = false; //自动播放
+      ads.autoPlayTime = 3; //自动播放间隔时间(秒)
+
+      ads.initialize(); //初始化
+
+    </script>
+
+  </div>
+
+  <div id="gc3" class="gcaldiv">
+    <div class="kh_c">
+      <a href="javascript:;" class="kh01 prev fl" id="LeftID1dd" title="上一组"></a>
+      <div id="ScollName1dd" style="float: left;">
+        {dede:field.typeid function="getImageGroupByTypeId(81)"/}
+      </div>
+      <a href="javascript:;" class="kh01 next fl" id="RightID1dd" title="下一组"></a>
+    </div>
+    <script type="text/javascript">
+      $(".kh02 ul li:eq(3)").addClass("nones");
+      $(".kh02 ul li:eq(7)").addClass("nones");
+      $(".kh02 ul li:eq(11)").addClass("nones");
+      $(".kh02 ul li:eq(15)").addClass("nones");
+      $(".kh02 ul li:eq(19)").addClass("nones");
+      $(".kh02 ul li:eq(23)").addClass("nones");
+    </script>
+    <script language="javascript" type="text/javascript">
+
+      var ads = new ScrollPicleft();
+      ads.scrollContId = "ScollName1dd"; // 内容容器ID""
+      ads.arrLeftId = "LeftID1dd"; //左箭头ID
+      ads.arrRightId = "RightID1dd"; //右箭头ID
 
       ads.frameWidth = 932; //显示框宽度
 
@@ -503,7 +546,7 @@
 <div class="h_gg pr">
   <a href="javascript:;" class="h_gg02"></a>
   <span class="gg01 pa">全国咨询电话<b>{dede:global.cfg_phone/}</b>
-      <a href="http://wpa.qq.com/msgrd?v=3&site={dede:global.cfg_companyname/}&menu=yes&uin=1037515501"
+      <a href="http://wpa.qq.com/msgrd?v=3&site={dede:global.cfg_companyname/}&menu=yes&uin={dede:global.cfg_qq/}"
          target="_blank" title="立即咨询">立即咨询</a>
     </span>
 </div>
@@ -515,7 +558,7 @@
       <dt>
         {dede:type typeid='48'}
         <a href="[field:typeurl/]" title="关于我们" target="_blank">
-          <img src="[field:global.cfg_templets_skin/]/images/20150119144741_23947.jpg" alt="关于我们"
+          <img src="[field:global.cfg_templets_skin/]/images/aboutus.png" alt="关于我们"
                title="关于我们"/>
         </a>
         {/dede:type}

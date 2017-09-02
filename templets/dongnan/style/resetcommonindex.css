@@ -855,7 +855,8 @@ p {
   height: 35px;
   line-height: 35px;
   background: url(../images/common/ico04.png) no-repeat 3px 11px;
-  padding: 0 0 0 36px;
+  padding: 0 0 10px 36px;
+  font-size: 20px;
 }
 
 .dy_c li b, .fj01 h2 span {
@@ -907,10 +908,16 @@ p {
 .fj01 h2 em {
   font-style: normal;
   font-weight: normal;
+  font-size: 25px;
+}
+
+.fj01 h2 em #age {
+  font-size: 30px;
 }
 
 .fj01 h2 b, .kh h2 b, .xz h2 b {
   color: #95be19;
+  font-size: 23px;
 }
 
 .fj_c {
@@ -1231,7 +1238,7 @@ p {
 
 .kh h2 p, .xz h2 p {
   font-weight: normal;
-  font-size: 22px;
+  font-size: 29px;
   line-height: 42px;
   display: block;
 }

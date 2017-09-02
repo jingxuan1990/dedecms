@@ -55,6 +55,7 @@
     </ul>
   </div>
 </div>
+
 <div class="content">
   <div class="cpbox">
     <!--业务分类-->
@@ -64,25 +65,29 @@
         <a href="[field:typeurl/]" title="[field:typename/]">[field:typename/]</a>
         {/dede:type}
       </h2>
+
       <div class="dh_c">
         {dede:channelartlist typeid='66'}
         <h3 sid="0001,000{dede:field name='id'/}">
           <a href='javascript:;' title="{dede:field name='typename'/}">{dede:field
             name='typename'/}</a>
         </h3>
+
         <ul>
-          {dede:arclist titlelen='40' row='5'}
-          <li sid="0001,000[field:typeid runphp='yes' ]
-            global $dsql;
-            @typeid=@me
-            $dsql->SetQuery(" SELECT * FROM #@__arctype WHERE id=@typeid");
-              $dsql->Execute();
-            $row = $dsql->GetArray();
-            @me=$row['reid'];
-            [/field:typeid], 000[field:id /]">
-            <a href="[field:arcurl /]" title="[field:title /]">[field:title/]</a>
-          </li>
-          {/dede:arclist}
+          {dede:php}
+          $id = $refObj->Fields['id'];
+          $sql = ("SELECT * FROM dede_arctype where reid ='$id'");
+          $db->SetQuery($sql);
+          $db->Execute();
+          if($db->GetTotalRow()){
+          while($row = $db->GetArray()){
+          $url = str_replace('{cmspath}','',($row[typedir]));
+          echo "
+          <li sid='0001,000$id,000$row[id]'><a href=".$url.">".($row[typename])."</a></li>
+          ";
+          };
+          };
+          {/dede:php}
         </ul>
         {/dede:channelartlist}
       </div>
@@ -110,19 +115,20 @@
 
     <div class="cp fl">
       <ul class="cptil">
-        <span class="more01 fr"><a href="/product/" title="更多">MORE +</a></span>
-        {dede:channel typeid='43,44,58' row='3'}
-        <li class="sb cur" onmousemove="qieh(this)" _id="sb[field:id/]">
-          <a href='[field:typeurl/]' title='[field:typename/]'>[field:typename/]</a>
+        <span class="more01 fr">
+          <a href="{dede:field.typeid function='getHrefByTypeId(66)'/}" title="更多">MORE +</a>
+        </span>
+        {dede:channelartlist typeid='79,72,80'}
+        <li class="sb cur" onmousemove="qieh(this)" _id="sb{dede:field.id/}">
+          <a href='{dede:field.typeurl/}' title='{dede:field.typename/}'>{dede:field.typename/}</a>
         </li>
-        {/dede:channel}
+        {/dede:channelartlist}
       </ul>
 
-      {dede:channelartlist typeid='43,44,58'}
+      {dede:channelartlist typeid='79,72,80'}
       <div id="sb{dede:field name='typeid'/}" class="sbdiv">
         <div class="cp_c">
-          {dede:arclist flag='c' titlelen='50' infolen='70' row='2' type='image.'
-          imgwidth='339'imgheight='195'}
+          {dede:arclist titlelen='50' infolen='150' row='2' imgwidth='339'imgheight='195'}
           <dl>
             <dt>
               <a href="[field:arcurl /]" title="[field:title /]" target="_blank">
@@ -138,9 +144,10 @@
                 [field:infos /]...
               </p>
               <span class="ico_gd">
-                <a href="http://wpa.qq.com/msgrd?v=3&site=[field:global.cfg_companyname/]&menu=yes&uin=1037515501"
+                <a href="http://wpa.qq.com/msgrd?v=3&site=[field:global.cfg_companyname/]&menu=yes&uin=[field:global.cfg_qq/]"
                    target="_blank" title="立即咨询" class="ico_lj">立即咨询</a>
-                <a href="[field:arcurl /]" title="了解更多" target="_blank">了解更多</a></span>
+                <a href="[field:arcurl /]" title="了解更多" target="_blank">了解更多</a>
+              </span>
             </dd>
           </dl>
           {/dede:arclist}

@@ -12,14 +12,14 @@
     </div>
     <div class="h_con">
       <div class="h_pho fr">
-        全国咨询电话<b>{dede:global.cfg_phone/}</b></div>
+        全国咨询电话<b>15538078824</b></div>
       <h1 class="fl">
         <a href="{dede:global.cfg_indexurl/}" title="{dede:global.cfg_indexname/}">
           <img src="{dede:global.cfg_logo/}"
                alt="{dede:global.cfg_companyname/}"
                title="{dede:global.cfg_companyname/}"/></a></h1>
       <p class="t_text fl">
-        15年专业电力供配电专家<b>量身定制<span>最经济、节能的</span>用电解决方案</b></p>
+        12年专业电力无线测温<b>115家客户选择的<span>零事故</span>配电安全方案提供商</b></p>
     </div>
 
     <div class="menu">
@@ -30,28 +30,9 @@
           </a>
         </li>
 
-        {dede:php}
-        $row = GetOneArchive(157);
-        $title = $row['arctitle'];
-        $arcUrl = $row['arcurl'];
-        echo  "<li aid='157'><a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a></li>";
-        {/dede:php}
-
-
-        {dede:php}
-        $row = GetOneArchive(158);
-        $title = $row['arctitle'];
-        $arcUrl = $row['arcurl'];
-        echo  "<li aid='158'><a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a></li>";
-        {/dede:php}
-
-
-        {dede:php}
-        $row = GetOneArchive(159);
-        $title = $row['arctitle'];
-        $arcUrl = $row['arcurl'];
-        echo  "<li aid='159'><a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a></li>";
-        {/dede:php}
+        {dede:field.typeid function='getNavUrlById(79)'/}
+        {dede:field.typeid function='getNavUrlById(72)'/}
+        {dede:field.typeid function='getNavUrlById(80)'/}
 
 
         {dede:type typeid='32'}
@@ -59,7 +40,11 @@
         {/dede:type}
 
         {dede:type typeid='38'}
-        <li><a href="[field:typeurl/]" title="客户服务"><span>客户服务</span></a></li>
+        <li><a href="[field:typeurl/]" title="测温方案中心"><span>测温方案中心</span></a></li>
+        {/dede:type}
+
+        {dede:type typeid='29'}
+        <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a></li>
         {/dede:type}
 
         {dede:type typeid='48'}

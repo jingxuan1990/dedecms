@@ -20,15 +20,13 @@
 <!-- 关键字和搜索结束 -->
 
 <script type="text/javascript">
-//      heaernavcs();
-//  initCommonHeader();
   var MARK = "product";
   if (MARK == "") {
     MARK = "index";
   }
-  //    initCommonHeaderKeywords(MARK);
 </script>
 <!--Header:End-->
+
 <!--Content:Start-->
 <div class="topadcs">
   <a href="/project/" title="东南电工——专业电力供配电专家，为您提供优质电力工程服务"><img
@@ -50,7 +48,7 @@
     </div>
 
     <div class="pro_main">
-      {dede:arclist row='20' orderby='pubdate' type='image.' imgwidth='223' imgheight='132'}
+      {dede:arclist row='20' orderby='pubdate' imgwidth='223' imgheight='132'}
       <dl class="pd_index_dl">
         <dt>
           <a target="_blank" href="[field:arcurl/]" title="[field:title/]">
@@ -77,7 +75,7 @@
     </div>
 
     <div class="RandomNews">
-      <h4 class="diysr">东南推荐资讯</h4>
+      <h4 class="diysr">泰恩推荐新闻</h4>
       <div class="news_random">
         <ul>
           {dede:arclist typeid='29' row='20' titlelen='50' orderby='rand'}
@@ -110,22 +108,23 @@
 
       <div class="nr">
         {dede:channelartlist typeid='66'}
-        <h4 sid="0001,000{dede:field name='id'/}">
+        <h4 sid="0001,00066,000{dede:field.id/}">
           <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">{dede:field name='typename'/}</a>
         </h4>
+
         <ul>
-          {dede:arclist titlelen='50' row='5'}
-          <li sid="0001,000[field:typeid runphp='yes' ]
-            global $dsql;
-            @typeid=@me
-            $dsql->SetQuery(" SELECT * FROM #@__arctype WHERE id=@typeid");
-              $dsql->Execute();
-            $row = $dsql->GetArray();
-            @me=$row['reid'];
-            [/field:typeid],000[field:id /]">
-            <a href="[field:arcurl /]" title="[field:title /]">[field:title/]</a>
-          </li>
-          {/dede:arclist}
+          {dede:php}
+          $id = $refObj->Fields['id'];
+          $sql = ("SELECT * FROM dede_arctype where reid ='$id'");
+          $db->SetQuery($sql);
+          $db->Execute();
+          if($db->GetTotalRow()){
+          while($row = $db->GetArray()){
+          $url = str_replace('{cmspath}','',($row[typedir]));
+          echo "<li sid='0001,000$id,000$row[id]'><a href=".$url.">".($row[typename])."</a></li>";
+          };
+          };
+          {/dede:php}
         </ul>
         {/dede:channelartlist}
       </div>
@@ -133,22 +132,21 @@
 
     <script type="text/javascript">
       var SID = '';
-      var aid = "{dede:field.id/}";
-      var typeId = "{dede:type}[field:id /]{/dede:type}";
+      var currentId = "{dede:field.id/}";
+      var parentId = "{dede:field.id function='getParentId(@me)'/}";
 
-      SID = '0001,000' + typeId;
-      if (aid !== '' && aid !== typeId) {
-        SID = SID + ",000" + aid;
-      }
+      console.log("currentId=" +currentId);
+      console.log("parentId=" +parentId);
+      SID = '0001,000' + parentId + ',000' + currentId;
       console.log("SID=" + SID);
       productSelectCurrentPosition();
     </script>
 
     <script type="text/javascript" language="javascript">
-      // 根据aid选择导航栏
+      // 根据sid选择导航栏
       $(function () {
         $("div.menu>ul>li").removeClass("cur");
-        $("div.menu>ul>li[aid='" + aid + "']").addClass("cur");
+        $("div.menu>ul>li[sid='" + SID + "']").addClass("cur");
       });
     </script>
 

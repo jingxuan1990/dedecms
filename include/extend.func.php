@@ -216,17 +216,57 @@ function getCompanyImages($typeid)
 
 
 // 获取指定文档的title和arl显示在导航栏上
-function getNavUrlByDocId($aid)
+function getNavUrlById($typeId)
 {
-    $row = GetOneArchive($aid);
-    $title = $row['arctitle'];
-    $arcUrl = $row['arcurl'];
+    global $db;
+    $sql = ("SELECT * FROM #@__arctype where id =$typeId");
+    $db->SetQuery($sql);
+    $db->Execute();
+    $row = $db->GetOne();
+    $parentId = $row['reid'];
 
-    $html = "<li aid=\"$aid\"><a href=\"$arcUrl\" title=\"$title\"><span>$title</span></a></li>";
+    $sid = "0001,000" . $parentId . ",000" . $typeId;
+    $url = getNewestArticleByTypeId($typeId);
+    $title = $row['typename'];
+
+    $html = "<li sid=\"$sid\"><a href=\"$url\" title=\"$title\"><span>$title</span></a></li>";
     return $html;
 }
 
-// 获取指定文档的title和arl显示在导航栏上(仅仅获得a标签)
+// 获取指定文档的title和url显示在底部导航
+function getBottomNavUrlById($typeId)
+{
+    global $db;
+    $sql = ("SELECT * FROM #@__arctype where id =$typeId");
+    $db->SetQuery($sql);
+    $db->Execute();
+    $row = $db->GetOne();
+    $url = getNewestArticleByTypeId($typeId);
+    $title = $row['typename'];
+
+    $html = "<a href=\"$url\" title=\"$title\">$title</>";
+    return $html;
+}
+
+// 获取某个栏目下的最新文章
+function getNewestArticleByTypeId($typeId)
+{
+    global $db;
+    $sql = ("SELECT * FROM dedecmsv57utf8sp2.dede_archives where typeid=$typeId order by pubdate desc;");
+    $db->SetQuery($sql);
+    $db->Execute();
+    $row = $db->GetOne();
+
+    $arcUrl = '';
+    if (!empty($row)) {
+        $aid = $row['id'];
+        $row = GetOneArchive($aid);
+        $arcUrl = $row['arcurl'];
+    }
+    return $arcUrl;
+}
+
+// 获取指定文档的title和url显示在导航栏上(仅仅获得a标签)
 function getANavUrlByDocId($aid)
 {
     $row = GetOneArchive($aid);
@@ -257,4 +297,15 @@ function getTypeNameByTypeId($typeId)
     $row = $dsql->GetOne();
     $name = $row['typename'];
     return $name;
+}
+
+// 获取当前栏目的静态链接地址
+function getHrefByTypeId($typeId)
+{
+    global $dsql;
+    $dsql->SetQuery("SELECT * FROM #@__arctype where id=$typeId");
+    $dsql->Execute();
+    $row = $dsql->GetOne();
+    $url = str_replace('{cmspath}', '', ($row['typedir']));
+    return $url;
 }

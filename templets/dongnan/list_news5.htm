@@ -59,7 +59,7 @@
     <div class="right_mains">
       <div class="news_cons">
 
-        {dede:list pagesize='30'}
+        {dede:list pagesize='30' infolen='200'}
         <dl class="dlh_al">
           <dt class="fr">
             <a href="[field:arcurl /]" target="_blank" title="[field:title /]">
@@ -71,10 +71,10 @@
               <a href="[field:arcurl /]" target="_blank" title="[field:title /]">[field:title /]</a>
             </h5>
             <p>
-              [field:description /]...
+              [field:infos /]...
             </p>
             <span class="ico_gds">
-              <a href="http://wpa.qq.com/msgrd?v=3&amp;site=[field:global.cfg_companyname/]&amp;menu=yes&amp;uin=1037515501"
+              <a href="http://wpa.qq.com/msgrd?v=3&amp;site=[field:global.cfg_companyname/]&amp;menu=yes&amp;uin=[field:global.cfg_qq/]"
                  target="_blank" title="立即咨询" class="ico_nw">立即咨询</a>
               <a href="[field:arcurl /]" title="了解更多" target="_blank">了解更多</a>
             </span>

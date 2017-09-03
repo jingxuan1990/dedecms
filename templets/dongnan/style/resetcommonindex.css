@@ -920,6 +920,11 @@ p {
   font-size: 23px;
 }
 
+.xz h2 b {
+  color: #95be19;
+  font-size: 40px;
+}
+
 .fj_c {
   background: url(../images/common/fatbg.gif) no-repeat center 0;
   padding: 84px 0 0;
@@ -1309,12 +1314,11 @@ p {
 
 .kh02 li img, .hz02 li img {
   width: 259px;
-  height: 90px;
+  height: 215px;
   border: solid 1px #e0e0e0;
   display: block;
 }
 
-/*选择东南电工*/
 .xz {
   height: 851px;
   line-height: 24px;
@@ -1360,7 +1364,7 @@ p {
 
 .xz_c dd h3 {
   background: url(../images/common/xzhbg.png) repeat-x 0 bottom;
-  font-size: 18px;
+  font-size: 23px;
   height: 57px;
   line-height: 57px;
   color: #1487c8;
@@ -1446,7 +1450,8 @@ p {
 .hz02 li img {
   padding: 2px;
   background: #fff;
-  display: block
+  display: block;
+  height: 90px;
 }
 
 .hz02 li span {
@@ -1959,3 +1964,6 @@ a.im, a:hover.im {
   color: #fff;
 }
 
+div.xz_c b {
+  color: blue;
+}

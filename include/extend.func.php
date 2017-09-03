@@ -89,7 +89,7 @@ function getImageGroupByTypeId($typeid)
 {
     global $dsql;
     $output = '';
-    $groupNum = 6;
+    $groupNum = 3;
 
     $template = <<<HTML
 <div class="kh02 fl">

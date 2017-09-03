@@ -119,11 +119,21 @@
           <a href="{dede:field.typeid function='getHrefByTypeId(66)'/}" title="更多">MORE +</a>
         </span>
         {dede:channelartlist typeid='79,72,80'}
-        <li class="sb cur" onmousemove="qieh(this)" _id="sb{dede:field.id/}">
+        <li class="sb" onmousemove="qieh(this)" _id="sb{dede:field.id/}">
           <a href='{dede:field.typeurl/}' title='{dede:field.typename/}'>{dede:field.typename/}</a>
         </li>
         {/dede:channelartlist}
       </ul>
+
+      <script type="text/javascript">
+        $(function () {
+          $("ul.cptil>li").each(function (index, item) {
+            if (index == 0) {
+              $(item).addClass("cur");
+            }
+          });
+        });
+      </script>
 
       {dede:channelartlist typeid='79,72,80'}
       <div id="sb{dede:field name='typeid'/}" class="sbdiv">
@@ -456,7 +466,7 @@
     <h2>
       选择<span>泰恩科技</span>-电力测温
       <p>
-        <b>12年</b>电力<b>零事故</b>的河南唯一一家<b>电力配电测温</b>方案提供商！
+        <b><i>12年 </i></b>电力<b>零事故</b>的河南<b>唯一</b>一家<b>电力配电测温</b>方案提供商！
       </p>
     </h2>
     <div class="xz_c">
@@ -468,7 +478,9 @@
             河南唯一！115家企业选择！
           </h3>
           <p>
-            河南<b>唯一一家电力配电测温</b>方案提供商；<b>12年</b>电力测温<b>0事故</b>；已经为<b>115家（含军工）企业</b>提供服务！
+            河南<b>唯一一家电力配电测温</b>方案提供商。<br/>
+            <b>12年</b>电力测温<b>0事故</b>。<br/>
+            已经为<b>115家（含军工）企业</b>提供服务！
           </p>
         </dd>
       </dl>
@@ -494,7 +506,9 @@
             国家专利技术！可用于军工！
           </h3>
           <p>
-            拥有国家颁发安全实用新型专利证书！国家颁发安全系统著作权登记证书！国家认可的电力测温产品！
+            拥有国家颁发安全实用新型专利证书！ <br/>
+            国家颁发安全系统著作权登记证书！<br/>
+            国家认可的电力测温产品！
         </dd>
       </dl>
     </div>

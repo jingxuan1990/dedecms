@@ -4,9 +4,10 @@
             <span class="fr">
               <a href="javascript:void(0);" onclick="javascript:addBookmark(this)"
                  title="收藏本站">收藏本站</a>|
-              <a href="#" title="在线留言" target="_blank">在线留言</a>|
-              <a href="#" title="常见问答" target="_blank">常见问答</a>|
-              <a href="{dede:global.cfg_cmsurl/}/data/sitemap.html" target="_blank" title="网站地图">网站地图</a>
+              <a href="{dede:field.typeid function='getHrefByTypeId(56)'/}" title="在线留言"
+                 target="_blank">在线留言</a>|
+              <a href="{dede:field.typeid function='getHrefByTypeId(36)'/}" title="常见问答" target="_blank">常见问答</a>|
+              <a href="{dede:field.typeid function='getHrefByTypeId(84)'/}" target="_blank" title="网站地图">网站地图</a>
             </span>
       {dede:global.cfg_welcome/}
     </div>
@@ -36,7 +37,8 @@
 
 
         {dede:type typeid='32'}
-        <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a></li>
+        <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a>
+        </li>
         {/dede:type}
 
         {dede:type typeid='38'}
@@ -44,11 +46,13 @@
         {/dede:type}
 
         {dede:type typeid='29'}
-        <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a></li>
+        <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a>
+        </li>
         {/dede:type}
 
         {dede:type typeid='48'}
-        <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a></li>
+        <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a>
+        </li>
         {/dede:type}
       </ul>
     </div>

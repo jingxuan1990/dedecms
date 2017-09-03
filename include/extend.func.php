@@ -309,3 +309,8 @@ function getHrefByTypeId($typeId)
     $url = str_replace('{cmspath}', '', ($row['typedir']));
     return $url;
 }
+
+function getSiteMapUl($typeId)
+{
+
+}

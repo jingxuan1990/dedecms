@@ -7217,7 +7217,7 @@ dl.oder a:hover {
 
 /*网站地图，显示方式样式，上边界根据需要进行调整*/
 .site_plc {
-  background: url(Img/ico27.gif) no-repeat 0 8px;
+  background: url(../images/common/ico27.gif) no-repeat 0 8px;
   padding: 5px 0;
   text-indent: 10px;
 }

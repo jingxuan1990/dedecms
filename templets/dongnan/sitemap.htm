@@ -1,0 +1,86 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  {dede:include filename="meta.htm"/}
+  <script type="text/javascript">
+    var SKIN_PATH = "{dede:global.cfg_templets_skin/}/";
+    var CMS_PATH = "{dede:global.cfg_cmsurl/}/";
+  </script>
+  <link href="{dede:global.cfg_templets_skin/}/style/resetcommon.css" rel="stylesheet" type="text/css" />
+  <link href="{dede:global.cfg_templets_skin/}/style/Style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/NSW_DetailsPro.js"></script>
+</head>
+<body>
+
+<!--头部开始-->
+{dede:include filename="head.htm"/}
+<!--头部结束-->
+
+<!-- 关键字和搜索开始 -->
+{dede:include filename="search_input.htm"/}
+<!-- 关键字和搜索结束 -->
+
+<script type="text/javascript">
+  var MARK = "product";
+  if (MARK == "") { MARK = "index"; }
+</script>
+
+<div class="content">
+  <div class="map_main">
+    <div class="sitemap_con">
+      <div class="map_top">
+        <div class="site_r_link">
+          <a href="#">HTM地图</a></div>
+        <div class="clear">
+        </div>
+      </div>
+      <div class="site_plc">
+        您的位置：<a href="{dede:global.cfg_indexurl/}" title="{dede:global.cfg_companyname/}">首页</a> > 网站地图
+      </div>
+
+      <h4>
+        <a href="http://www.dnee.com.cn/" title="{dede:global.cfg_indexurl/}" target="_blank">泰恩科技网站首页</a>
+      </h4>
+
+      <div class="b4">
+        <ul>
+          <li><a href="{dede:global.cfg_indexurl/}" title="泰恩首页" target="_blank">泰恩首页</a></li>
+          {dede:channelartlist typeid='79,72,80,32,38,29,48'}
+          {dede:type}
+          <li><a href="[field:typelink/]" title="[field:typename/]" target="_blank">[field:typename/]</a></li>
+          {/dede:type}
+          {/dede:channelartlist}
+        </ul>
+        <div class="clear"></div>
+      </div>
+
+
+      {dede:channelartlist typeid='66,38,47,29' row=50}
+      <h4>
+        <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}" target="_blank">{dede:field name='typename'/}</a>
+      </h4>
+      <div class="b4">
+        <ul>
+          {dede:channel type='son' }
+          <li><a href="[field:typelink/]" title="[field:typename/]" target="_blank">[field:typename/]</a></li>
+          {/dede:channel}
+        </ul>
+        <div class="clear"></div>
+      </div>
+      {/dede:channelartlist}
+    </div>
+  </div>
+</div>
+<div class="clear">
+</div>
+
+<!--底部开始-->
+{dede:include filename="footer.htm"/}
+<!--底部结束-->
+
+
+<!-- 百度分享 -->
+{dede:include filename="baidu_share.htm"/}
+</body>
+</html>

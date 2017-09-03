@@ -4,10 +4,10 @@
             <span class="fr">
               <a href="javascript:void(0);" onclick="javascript:addBookmark(this)"
                  title="收藏本站">收藏本站</a>|
-              <a href="{dede:field.typeid function='getHrefByTypeId(56)'/}" title="在线留言"
+              <a href="{dede:php}echo getHrefByTypeId(56);{/dede:php}" title="在线留言"
                  target="_blank">在线留言</a>|
-              <a href="{dede:field.typeid function='getHrefByTypeId(36)'/}" title="常见问答" target="_blank">常见问答</a>|
-              <a href="{dede:field.typeid function='getHrefByTypeId(84)'/}" target="_blank" title="网站地图">网站地图</a>
+              <a href="{dede:php}echo getHrefByTypeId(36);{/dede:php}" title="常见问答" target="_blank">常见问答</a>|
+              <a href="{dede:php}echo getHrefByTypeId(84);{/dede:php}" target="_blank" title="网站地图">网站地图</a>
             </span>
       {dede:global.cfg_welcome/}
     </div>
@@ -31,10 +31,9 @@
           </a>
         </li>
 
-        {dede:field.typeid function='getNavUrlById(79)'/}
-        {dede:field.typeid function='getNavUrlById(72)'/}
-        {dede:field.typeid function='getNavUrlById(80)'/}
-
+        {dede:php}echo getNavUrlById(79);{/dede:php}
+        {dede:php}echo getNavUrlById(72);{/dede:php}
+        {dede:php}echo getNavUrlById(80);{/dede:php}
 
         {dede:type typeid='32'}
         <li><a href="[field:typeurl/]" title="[field:typename/]"><span>[field:typename/]</span></a>

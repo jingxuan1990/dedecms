@@ -4190,6 +4190,8 @@ function xuanze() {
   }
   window.location.href = "/plus/search.php?searchtype='titlekeyword'&q=" + a
 }
+
+
 $(function () {
   $("div.menu li:first").addClass("cur");
   $("#seachkeywords").val("请输入关键词搜索").css({color: "#666"});
@@ -4211,6 +4213,7 @@ function xuanze01() {
   }
   window.location.href = "/Search/Index.aspx?objtype=product&kwd=" + a
 }
+
 $(function () {
   $("div.menu li:first").addClass("cur");
   $("#seachkeywords01").val("请输入产品名称").css({color: "#666"});

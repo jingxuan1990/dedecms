@@ -4179,14 +4179,16 @@ function LoginCheck(a, c) {
         }
       })
 }
+
 function xuanze() {
   var a = document.getElementById("seachkeywords").value;
   if (a == "请输入关键词搜索") {
     $a("请输入关键词搜索");
     return;
   }
-  window.location.href = "/Search/Index.aspx?objtype=product&kwd=" + a
+  window.location.href = "/plus/search.php?searchtype='titlekeyword'&q=" + a
 }
+
 $(function () {
   $("#seachkeywords").val("请输入关键词搜索").css({color: "#666"});
   $("#seachkeywords").click(function () {

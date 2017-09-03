@@ -3297,9 +3297,9 @@ function $a(c, p, g, l, o, a) {
   if (f.length == 0) {
     var n = "<div id='mesbook1'><div><img style='float:right' onclick='hideMsg()' id='mesbook1ImgClose' src='"
         + SKIN_PATH
-        + "Img/ico9_close.gif' alt='关闭' class='fr p vam ml5' /><span id='mesbook1Title'></span></div><dl class='b1'><dt><img id='mesbook1Icon' src='"
+        + "images/common/ico9_close.gif' alt='关闭' class='fr p vam ml5' /><span id='mesbook1Title'></span></div><dl class='b1'><dt><img id='mesbook1Icon' src='"
         + SKIN_PATH
-        + "Img/message_ico_03.gif' alt='' title='' /></dt><dd class='l_25' id='mesbook1Msg'></dd><dd class='b' style='visibility:hidden' id='mesbook1AutoClose'>此窗口<span id='mesbook1Delay' style='margin:0 5px;'></span>秒钟后自动关闭。</dd><dd id='mesbook1Btns'><input type='button' class='b15' value='关 闭' /></dd></dl></div>";
+        + "images/common/message_ico_03.gif' alt='' title='' /></dt><dd class='l_25' id='mesbook1Msg'></dd><dd class='b' style='visibility:hidden' id='mesbook1AutoClose'>此窗口<span id='mesbook1Delay' style='margin:0 5px;'></span>秒钟后自动关闭。</dd><dd id='mesbook1Btns'><input type='button' class='b15' value='关 闭' /></dd></dl></div>";
     $(document.body).append(n)
   }
   var f = $j("mesbook1");
@@ -3312,7 +3312,7 @@ function $a(c, p, g, l, o, a) {
   var q = $j("mesbook1Btns");
   j.html(o);
   k.html(c);
-  var i = SKIN_PATH + "Img/";
+  var i = SKIN_PATH + "images/common/";
   switch (p) {
     case 1:
       i += "ico_ok.gif";
@@ -3884,7 +3884,9 @@ function showVerifyCode(a, c, b, f) {
   if (h.html() == "") {
     e.html("正在加载验证码...");
     e.show();
-    h.html("<img src='/Tools/ValidCode.aspx' style='display:none;' id='" + b
+    h.html("<img src='" + CMS_PATH
+        + "include/vdimgck.php' style='display:none;' id='"
+        + b
         + "' alt='验证码' />")
   }
   var g = $j(b);
@@ -3896,20 +3898,20 @@ function showVerifyCode(a, c, b, f) {
 }
 function changeVerCode(a, b) {
   if (a == null) {
-    a = "imgVerCode"
+    a = "spVerCode"
   }
   if (b == null) {
     b = "spVerCodeMsg"
   }
+
   var d = $j(a);
   var c = $j(b);
   c.html("正在刷新验证码...").show();
-  d.attr({src: "/Tools/ValidCode.aspx?x=" + Math.random(), alt: "验证码"});
-  d.hide();
-  d.load(function () {
-    c.hide();
-    d.show()
-  })
+  d.html("<img src='" + CMS_PATH
+      + "include/vdimgck.php?" + new Date().getTime()
+      + "' style='display:inline;' id='" + "imgVerCode"
+      + "' alt='验证码' />");
+  c.hide();
 }
 function showProc(c, a) {
   var b = $j("imgProc");
@@ -3922,7 +3924,7 @@ function showProc(c, a) {
       b.remove()
     }
     $("<img src='" + SKIN_PATH
-        + "img/processing.gif' id='imgProc' alt='正在处理' />").insertAfter(c)
+        + "images/common/processing.gif' id='imgProc' alt='正在处理' />").insertAfter(c)
   } else {
     $(c).show();
     b.remove()
@@ -7430,4 +7432,80 @@ function initCommonHeader() {
           $j("commonHeaderUser").fadeIn(80);
         }
       });
+}
+
+//留言
+function leaveMsg(src) {
+  var regemail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  var PTN_FLOAT = /\d+(\.\d+)?/;
+  var regphone = /^1[3-8]\d{9}$/;
+  var regcontent = /^([1-9])+([0-9]{5,9})$/;
+
+  // 联系人
+  var txtContact = $j("txtContact").val();
+
+  // 固定电话
+  var txtTel1 = $j("txtTel1").val();
+  var txtTel2 = $j("txtTel2").val();
+  var txtTel3 = $j("txtTel3").val();
+  var telPhone = txtTel1 + '-' + txtTel2 + '-' + txtTel3;
+
+  // 手机号码
+  var txtMobileNo = $j("txtMobileNo").val();
+  // 电子邮件地址
+  var txtEmail = $j("txtEmail").val();
+  // 备注
+  var txtContent = $j("txtContent").val();
+  var txtVerCode = $j("txtVerCode").val();
+
+  var err = "";
+  var reg = /^\s*$/;
+  if (reg.test(txtContact)) {
+    err += "<p>联系人不可为空</p>";
+  }
+  if (reg.test(txtEmail)) {
+    err += "<p>Email不可为空</p>";
+  } else if (!regemail.test(txtEmail)) {
+    err += "<p>Email格式不正确</p>";
+  }
+
+  if (reg.test(txtContent)) {
+    err += "<p>备注不能为空</p>";
+  }
+
+  if (txtVerCode == undefined || txtVerCode.length == 0) {
+    err += "<p>请输入验证码</p>";
+  }
+  if (err.length > 0) {
+
+    $a(err);
+
+    return;
+  }
+  showProc(src);
+  $.post(CMS_PATH + "plus/diy.php?action=post&diyid=3", {
+    txtcontact: txtContact,
+    txttel: telPhone,
+    txtmobileno: txtMobileNo,
+    txtemail: txtEmail,
+    txtcontent: txtContent,
+    validate: txtVerCode,
+    do: 2,
+    dede_fields: 'txtcontact,text;txttel,text;txtmobileno,text;txtemail,text;txtcontent,multitext'
+  }, function (q) {
+    var codeEle = document.getElementById("imgVerCode");
+    codeEle.src = CMS_PATH + "include/vdimgck.php?" + new Date().getTime();
+    if (q === "succ") {
+      $a("提交成功！", 1);
+      emptyText("oran_table_1");
+    } else {
+      if ($.trim(q).indexOf("验证码不正确") != -1) {
+        $a("验证码错误！");
+      } else {
+        emptyText("oran_table_1");
+      }
+    }
+    // src.show()
+    showProc(src, false);
+  });
 }

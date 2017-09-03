@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+  {dede:include filename="meta.htm"/}
+  <script language="javascript">
+    var SKIN_PATH = "{dede:global.cfg_templets_skin/}/";
+    var CMS_PATH = "{dede:global.cfg_cmsurl/}/";
+  </script>
+  <link href="{dede:global.cfg_templets_skin/}/style/resetcommon.css" rel="stylesheet"
+        type="text/css"/>
+  <link href="{dede:global.cfg_templets_skin/}/style/Style.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/NSW_JCIA.js"></script>
+</head>
+<body>
+<!--Header:Start-->
+
+<!--头部开始-->
+{dede:include filename="head.htm"/}
+<!--头部结束-->
+
+<!-- 关键字和搜索开始 -->
+{dede:include filename="search_input.htm"/}
+<!-- 关键字和搜索结束 -->
+
+<script type="text/javascript">
+  var MARK = "help";
+  if (MARK == "") {
+    MARK = "index";
+  }
+</script>
+
+<!--Header:End-->
+<!--content:start-->
+
+<!-- 导航下的图片显示 -->
+{dede:include filename="news_nav_pic.htm"/}
+
+<div class="content">
+  <div class="left">
+    <div class="leib">
+      <div class="tit">
+        <span>走进泰恩</span>
+      </div>
+      <div class="nr">
+        {dede:channelartlist typeid='47'}
+        <h4 sid="0001,000{dede:field name='id'/}">
+          <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">
+            {dede:field name='typename'/}</a>
+        </h4>
+        {/dede:channelartlist}
+      </div>
+    </div>
+
+    <!-- 联系我们开始-->
+    {dede:include filename="contact_us.htm"/}
+    <!-- 联系我们结束-->
+
+  </div>
+
+  <script type="text/javascript">
+    var SID = '';
+    var typeId = "{dede:type}[field:id /]{/dede:type}";
+
+    SID = '0001,000' + typeId;
+    console.log("SID=" + SID);
+    productSelectCurrentPosition();
+  </script>
+
+  <div class="right">
+    <div class="plc">
+      <span>
+        <span>当前位置：</span>
+       {dede:field.position/}
+      </span>
+    </div>
+
+    <div class="righttop mt10">
+    </div>
+    <div class="right_main">
+      <div class="help_tab">
+        <div class="bitian">
+          <div>
+            <span class="red_x1">*</span>表示必填
+          </div>
+          <h4 class="cont_tit">
+            请留下您的问题,我们将尽快与您联系！
+          </h4>
+        </div>
+
+        <table class="tab_1" id="oran_table_1">
+          <tbody>
+          <tr>
+            <td class="tab_lt">
+              <span class="red_x">*</span> 联系人：
+            </td>
+            <td>
+              <input name="txtContact" type="text" id="txtContact" size="35" maxlength="32">
+              <span id="RequiredFieldValidator3" class="error" style="color:Red;display:none;">请填写联系人</span>
+              请填写您的姓名，方便我们联系您
+            </td>
+          </tr>
+          <tr>
+            <td class="tab_lt">
+              联系电话：
+            </td>
+            <td>
+              <input name="txtTel1" type="text" maxlength="4" id="txtTel1" style="width: 47px;">
+              <input name="txtTel2" type="text" maxlength="10" id="txtTel2" style="width: 80px;">
+              <input name="txtTel3" type="text" maxlength="5" id="txtTel3" style="width: 46px;">
+              固定电话(区号-电话号码-分机)
+            </td>
+          </tr>
+          <tr>
+            <td class="tab_lt">
+              手机号码：
+            </td>
+            <td>
+              <input name="txtMobileNo" type="text" id="txtMobileNo" size="35" maxlength="16">
+              <span id="RegularExpressionValidator5" class="error" style="color:Red;display:none;">手机号码格式错误</span>
+              请填写您的手机号码
+            </td>
+          </tr>
+          <tr>
+            <td class="tab_lt">
+              <span class="red_x">*</span> 电子邮件：
+            </td>
+            <td>
+              <input name="txtEmail" type="text" id="txtEmail" size="35" maxlength="128">
+              <span id="RequiredFieldValidator1" class="error" style="color:Red;display:none;">请填写电子邮箱地址</span>
+              <span id="RegularExpressionValidator1" class="error" style="color:Red;display:none;">电子邮件格式错误</span>
+              请填写您的电子邮件
+            </td>
+          </tr>
+          <tr>
+            <td class="tab_lt tab_bz">
+              <span class="red_x">*</span>备注：
+            </td>
+            <td>
+              <textarea name="txtContent" id="txtContent" cols="80" rows="5" class="ks5"></textarea>
+              <span id="RequiredFieldValidator5" class="error" style="color:Red;display:none;">请填写问题描述</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            </td>
+            <td>
+              请填写您的<span class="span_1">问题描述</span>，有您的支持，是我们不断前进的动力，<span
+                class="span_1">感谢您的支持！</span>
+            </td>
+          </tr>
+          <tr id="cntrVerCode">
+            <td class="tab_lt">
+              <span class="red_x">*</span> 验证码：
+            </td>
+            <td>
+              <input name="txtVerCode" type="text" id="txtVerCode" size="15" maxlength="8"
+                     onfocus="showVerifyCode()">
+              <cite>
+                <span id="spVerCode"></span>
+                <span id="spVerCodeMsg" class="hd"></span>
+                <a id="spChgVerCode" class="p hd" href="###" onclick="changeVerCode()">看不清？！</a>
+              </cite>
+              <span id="RequiredFieldValidator6" class="error" style="color:Red;display:none;">请填写验证码</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+            </td>
+            <td>
+              <input type="submit" name="btnSubmit" value="提 交"
+                     onclick="leaveMsg(this)" id="btnSubmit" class="b17">
+              <input type="button" class="b18" value="重 填" onclick="emptyText('oran_table_1')">
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="rightbot">
+    </div>
+  </div>
+  <div class="clear">
+  </div>
+</div>
+<div class="clear">
+</div>
+<!--content:end-->
+<!--Footer:Start-->
+
+<!--底部开始-->
+{dede:include filename="footer.htm"/}
+<!--底部结束-->
+
+
+<!-- 百度分享 -->
+{dede:include filename="baidu_share.htm"/}
+
+<!--Footer:End-->
+</body>
+<script type="text/javascript">
+  $(function () {
+    if ($(".h_nav ul li").eq(7).attr("class") == "cur") {
+      $(".h_nav ul li").eq(0).removeClass("cur");
+    }
+  });
+</script>
+</html>

@@ -252,7 +252,7 @@ function getBottomNavUrlById($typeId)
 function getNewestArticleByTypeId($typeId)
 {
     global $db;
-    $sql = ("SELECT * FROM dedecmsv57utf8sp2.dede_archives where typeid=$typeId order by pubdate desc;");
+    $sql = ("SELECT * FROM #@__archives where typeid=$typeId order by pubdate desc;");
     $db->SetQuery($sql);
     $db->Execute();
     $row = $db->GetOne();
